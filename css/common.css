@@ -6,6 +6,7 @@
     --main-black-color: rgb(34, 35, 35);
     --main-gray-color: rgb(113, 116, 116);
     --main-white-color: rgb(255, 255, 255);
+    --divider-gray-color:rgb(224, 224, 224);
 }
 
 * {
