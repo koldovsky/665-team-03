@@ -19,3 +19,46 @@ img {
     display: block;
     width: 100%;
 }
+
+header.section_header {
+    font-family: 'Bebas Neue', cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header.section_header > h2 {
+    position: relative;
+    font-size: 52px;
+    line-height: 1.14;
+    font-weight: 400;
+    color: #222323; /*--main-black-color: rgb(34, 35, 35);*/
+    margin-bottom: 30px;
+}
+
+header.section_header > h2 > .dot--color {
+    color: #f40106; /* --main-red-color: rgb(244, 1, 6);*/
+}
+
+header.section_header > h2:after {
+    content:"";
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    height: 2px;
+    width: 93.6px;
+    transform: translate(-50%, -50%);
+    background-color: rgb(224, 224, 224); /*--divider-gray-color:rgb(224, 224, 224)*/
+}
+
+header.section_header > p {
+    font-family: PT Sans,sans-serif;
+    font-size: 20px;
+    line-height: 1.5;
+    font-weight: 400;
+    letter-spacing: 0;
+    color: #717474; /*--main-gray-color: rgb(113, 116, 116);*/
+    text-transform: none; 
+}
