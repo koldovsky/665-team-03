@@ -20,6 +20,10 @@ img {
     width: 100%;
 }
 
+a{
+    text-decoration: none;
+}
+
 header.section_header {
     font-family: 'Bebas Neue', cursive;
     display: flex;
