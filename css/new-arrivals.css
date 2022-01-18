@@ -16,7 +16,7 @@
     line-height: 2.5rem;
     font-size: 38px;
 }
-.new-arrivals_text__title .highlighted{
+.highlighter{
     color:var(--main-red-color)
 }
 .underline{
@@ -71,7 +71,6 @@
     grid-template-columns: 1fr;
     gap:16px;
     position:relative;
-    max-height:1150px;
 }
 .new-arrivals-product:not(:first-child){
     display:none;
