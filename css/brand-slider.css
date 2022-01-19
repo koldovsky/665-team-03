@@ -1,0 +1,78 @@
+@import url(common.css); 
+
+* {
+    box-sizing: border-box;
+}
+
+.brand__slider {
+    padding-top: 120px;
+    padding-bottom: 60px;
+    padding-left: 15px;
+    padding-right: 15px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.brand__slider .slider {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.brand__slider .slider__container {
+    padding: 0 40px;
+}
+
+.slider__inner .brand-item {
+    border: 2px solid var(--divider-gray-color);
+    margin: 0 15px;
+    width: 263px;
+    height: 158px;
+    margin-bottom: 10px;
+}
+
+.slider__inner .brand-item img { 
+    display: block;
+    height: 100%;
+    padding: 20px;
+    margin: auto;
+    object-fit: contain;
+    width: 100%;
+}
+
+span {
+    display: inline-block;
+}
+
+.slider .priv_arrow img {
+    position: absolute;
+    top: 50%;
+    left: -15px;
+    width: 30px;
+    height: 30px;
+    opacity: .85;
+    text-align: center;
+    cursor: pointer;
+    transition: opacity .2s ease-out;
+    transform: translate(-50%, -50%);
+}
+
+.slider .next_arrow img  {
+    position: absolute;
+    top: 50%;
+    right: -15px;
+    width: 30px;
+    height: 30px;
+    opacity: .85;
+    text-align: center;
+    cursor: pointer;
+    transition: opacity .2s ease-out;
+    transform: translate(50%, -50%);
+}
+
+.slider .priv_arrow img:hover,
+.slider .next_arrow img:hover {
+    opacity: 1;
+}

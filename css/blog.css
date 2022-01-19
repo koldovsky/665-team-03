@@ -9,6 +9,8 @@
     border:2px solid var(--divider-gray-color);
     text-align: center;
     line-height: 448px;
+    font-size: 1.5rem;
+    font-weight: bolder;
     width: 100%;
     max-width:1200px;
     margin: 0 auto;
@@ -16,10 +18,13 @@
 .blog__head-text{
     text-align: center;
     padding:50px;
+    font-size: 1.5rem;
 }
 .blog__text-title{
-    line-height: 2.5rem;
-    font-size: 38px;
+    line-height: 3rem;
+    font-size: 3.5rem;
+    font-family: 'Bebas Neue', cursive;
+    font-weight:lighter;
 }
 .blog__head-text .underline{
     margin:30px auto;
