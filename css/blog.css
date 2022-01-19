@@ -1,0 +1,28 @@
+.blog{
+    height: 621px;
+    width: 94%;
+    margin: 50px auto;
+    text-align: center;
+}
+.blog__blog-location{
+    height:448px;
+    border:2px solid var(--divider-gray-color);
+    text-align: center;
+    line-height: 448px;
+    width: 100%;
+    max-width:1200px;
+    margin: 0 auto;
+}
+.blog__head-text{
+    text-align: center;
+    padding:50px;
+}
+.blog__text-title{
+    line-height: 2.5rem;
+    font-size: 38px;
+}
+.blog__head-text .underline{
+    margin:30px auto;
+    width: 10%;
+}
+
