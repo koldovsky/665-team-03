@@ -6,7 +6,7 @@
 
 .deal__section {
     position: relative;
-    color: #fff;
+    color: var(--main-white-color);
 }
 
 .bg-wrapper {
@@ -21,7 +21,7 @@
 
 .bg-wrapper .bg-dark {
     position: absolute;
-    background: #222323;
+    background: var(--main-black-color);
     top: 0;
     right: 0;
     bottom: 0;
@@ -69,14 +69,14 @@
 
 .column__content .column-1 .deal-title {
     font-family: 'Bebas Neue', cursive;
-    color: #fff;
+    color: var(--main-white-color);
     font-size: 62px;
     font-weight: 400;
     line-height: 62px;
 }
 
 .column__content .column-1 .text-color {
-    color: #f40106;
+    color: var(--main-red-color); 
 }
 
 .column__content .column-1 .deal-price {
@@ -120,7 +120,7 @@
 .column__content .btn-holder .btn-deal::after {
     position: absolute;
     content: "";
-    background-image: url(/img/deal-section/arrow-right.svg);
+    background-image: url(../img/deal-section/arrow-right.svg);
     width: 24px;
     height: 20px;
     background-repeat: repeat;
@@ -166,7 +166,7 @@
 .countdown__item {
     position: relative;
     flex-grow: 4;
-    border: 1px solid #9b9b9b;
+    border: 1px solid var(--countdown-border);
     border-radius: 5px;
 }
 
