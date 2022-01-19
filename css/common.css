@@ -39,12 +39,12 @@ header.section_header > h2 {
     font-size: 52px;
     line-height: 1.14;
     font-weight: 400;
-    color: var(--main-black-color); /*--main-black-color: rgb(34, 35, 35);*/
+    color: var(--main-black-color); 
     margin-bottom: 30px;
 }
 
 header.section_header > h2 > .dot--color {
-    color: var(--main-red-color); /* --main-red-color: rgb(244, 1, 6);*/
+    color: var(--main-red-color); 
 }
 
 header.section_header > h2:after {
@@ -56,7 +56,7 @@ header.section_header > h2:after {
     height: 2px;
     width: 93.6px;
     transform: translate(-50%, -50%);
-    background-color: var(--divider-gray-color); /*--divider-gray-color:rgb(224, 224, 224)*/
+    background-color: var(--divider-gray-color); 
 }
 
 header.section_header > p {
@@ -65,6 +65,6 @@ header.section_header > p {
     line-height: 1.5;
     font-weight: 400;
     letter-spacing: 0;
-    color: var(--main-gray-color); /*--main-gray-color: rgb(113, 116, 116);*/
+    color: var(--main-gray-color); 
     text-transform: none; 
 }
