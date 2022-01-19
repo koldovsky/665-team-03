@@ -121,7 +121,7 @@
 .column__content .btn-holder .btn-deal::after {
     position: absolute;
     content: "";
-    background-image: url(./images/arrow-right.svg);
+    background-image: url(/img/deal-section/arrow-right.svg);
     width: 24px;
     height: 20px;
     background-repeat: repeat;
