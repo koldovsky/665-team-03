@@ -15,20 +15,24 @@
     <!-- Maksym's block start -->
     <header class="header">
         <div class="header__top-row">
-            <p class="header__top-row-header-text">We've extended our returns period to 30 days.</p>
-            <a href="mailto:workout@email.com" class="header__top-row-link-email">workout@email.com</a>
-            <a href="tel:+12345678900" class="header__top-row-link-phone">+1 (234) 567 89 00</a>
+            <div class="top__row-text">
+                <p class="header__top-row-header-text">We've extended our returns period to 30 days.</p>
+            </div>
+            <div class="header__top-row-contacts">
+                <a href="mailto:workout@email.com" class="header__top-row-link-email">workout@email.com</a>
+                <a href="tel:+12345678900" class="header__top-row-link-phone">+1 (234) 567 89 00</a>
+            </div>
         </div>
-        <nav class="header__nav" style="background-color: gray;">
+        <nav class="header__nav">
             <div class="header__nav-logo">
-                <img width="200" src="img/header/sport-store-logo.svg" alt="Sport Store Logo">
+                <img class="header__nav-logo-img" src="img/header/sport-store-logo.svg" alt="Sport Store Logo">
             </div>
             <div class="header__nav-links">
-                <a class="header__nav-links-about-us" href="#about-us">About us.</a>
-                <a class="header__nav-links-sale" href="#sale">Sale.</a>
-                <a class="header__nav-links-collection" href="#collection">Collection.</a>
-                <a class="header__nav-links-blog" href="#blog">Blog.</a>
-                <a class="header__nav-links-contact-us" href="#contact-us">Contact us.</a>
+                <a class="header__nav-links-about-us" href="#about-us"><strong>About us.</strong></a>
+                <a class="header__nav-links-sale" href="#sale"><strong>Sale.</strong></a>
+                <a class="header__nav-links-collection" href="#collection"><strong>Collection.</strong></a>
+                <a class="header__nav-links-blog" href="#blog"><strong>Blog.</strong></a>
+                <a class="header__nav-links-contact-us" href="#contact-us"><strong>Contact us.</strong></a>
             </div>
             <div class="header__nav-icons">
                 <a href=""><i class="fab fa-facebook"></i></a>
@@ -38,7 +42,7 @@
         </nav>
         <div class="header__banner">
             <p class="header__banner-text">ASPIRE TO MORE</p>
-            <h1 class="header__baner-title">NEW <span class="highlight">COLLECTIONS</span> BY TOP BRANDS<span
+            <h1 class="header__banner-title">NEW <span class="highlight">COLLECTIONS</span> BY TOP BRANDS<span
                     class="highlight">.</span></h1>
             <a class="header_banner-button-link" href="#main-collection">Shop Now <i
                     class="fas fa-long-arrow-alt-right"></i></a>
@@ -48,36 +52,37 @@
 
     <!--Sanya Block start-->
     <section>
-    <div class="get-your-discount">
-        <div class="section_baner">
-            <div class="section-text">
-                 <p class="section_name">SALE OF THE MONTH</p>
-                 <h2 class="section_words">GET YOUR DISCOUNT<span class="red-dot">.</span></h2>
-                 <a class="shop-now" href="#maincoll">Shop now </a>
-            </div>
-        </div> 
-    </div>    
-    </section>
-    
-    <section>
-        <div class="subscribe">
-            <div class="subscribe-inner">  
-               <div class="subscribtions-content"> 
-                   <div>
-                       <img src="img/subscribe-section/envelope.svg" alt="Envelo">
-                       <p><span>10%</span>OFF YOUR FIRST ORDER. SIGN UP TO OUR NEWSLETTER TO GET THIS SPECIAL OFFER.</p>
-                   </div>
-               </div> 
-                <div class="form-subs">
-                    <form class="form-subscribe" action="https://formspree.io/f/mbjqewew" method="POST">
-                        <input type="email" placeholder="Your email address">    
-                       <input class="button-subs" id="my-form-button" value="subscribe" type="submit">
-                    </form>                       
+        <div class="get-your-discount">
+            <div class="section_baner">
+                <div class="section-text">
+                    <p class="section_name">SALE OF THE MONTH</p>
+                    <h2 class="section_words">GET YOUR DISCOUNT<span class="red-dot">.</span></h2>
+                    <a class="shop-now" href="#maincoll">Shop now </a>
                 </div>
             </div>
         </div>
-  
-</section>
+    </section>
+
+    <section>
+        <div class="subscribe">
+            <div class="subscribe-inner">
+                <div class="subscribtions-content">
+                    <div>
+                        <img src="img/subscribe-section/envelope.svg" alt="Envelo">
+                        <p><span>10%</span>OFF YOUR FIRST ORDER. SIGN UP TO OUR NEWSLETTER TO GET THIS SPECIAL OFFER.
+                        </p>
+                    </div>
+                </div>
+                <div class="form-subs">
+                    <form class="form-subscribe" action="https://formspree.io/f/mbjqewew" method="POST">
+                        <input type="email" placeholder="Your email address">
+                        <input class="button-subs" id="my-form-button" value="subscribe" type="submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </section>
     <!--Sanya Block end-->
 
     <!-- Section Deal Chympaiesh Mykola Start-->
@@ -94,9 +99,10 @@
                             <h4 class="deal-price">
                                 <span class="font-w">PUMA SPORTS BRA</span>
                                 <span class="text-color">$50</span>
-                                <del><span>$70</span></del> 
+                                <del><span>$70</span></del>
                             </h4>
-                            <p class="deal-subtitle">Start your fitness story right away with this comfortable bra and get advantage of our discount.</p>
+                            <p class="deal-subtitle">Start your fitness story right away with this comfortable bra and
+                                get advantage of our discount.</p>
                             <div class="btn-holder">
                                 <a class="btn-deal">More Details</a>
                             </div>
@@ -104,28 +110,32 @@
                                 <div class="countdown">
                                     <div class="countdown__item">
                                         <svg viewBox="0 0 120 120" class="countdown__content">
-                                            <text id="day" data-unit="days" x="50%" y="50%" class="countdown__number">333</text>
+                                            <text id="day" data-unit="days" x="50%" y="50%"
+                                                class="countdown__number">333</text>
                                             <text x="50%" y="50%" dy="28" class="countdown__caption">Days</text>
                                         </svg>
                                     </div>
                                     <div class="countdown__separator"></div>
                                     <div class="countdown__item">
                                         <svg viewBox="0 0 120 120" class="countdown__content">
-                                            <text id="hour" data-unit="hours" x="50%" y="50%" class="countdown__number">24</text>
+                                            <text id="hour" data-unit="hours" x="50%" y="50%"
+                                                class="countdown__number">24</text>
                                             <text x="50%" y="50%" dy="28" class="countdown__caption">Hours</text>
                                         </svg>
                                     </div>
                                     <div class="countdown__separator"></div>
                                     <div class="countdown__item">
                                         <svg viewBox="0 0 120 120" class="countdown__content">
-                                            <text id="minute" data-unit="minutes" x="50%" y="50%" class="countdown__number">45</text>
+                                            <text id="minute" data-unit="minutes" x="50%" y="50%"
+                                                class="countdown__number">45</text>
                                             <text x="50%" y="50%" dy="28" class="countdown__caption">Minutes</text>
                                         </svg>
                                     </div>
                                     <div class="countdown__separator"></div>
-                                    <div  class="countdown__item">
-                                        <svg  viewBox="0 0 120 120" class="countdown__content">
-                                            <text id="second" data-unit="seconds" x="50%" y="50%" class="countdown__number">60</text>
+                                    <div class="countdown__item">
+                                        <svg viewBox="0 0 120 120" class="countdown__content">
+                                            <text id="second" data-unit="seconds" x="50%" y="50%"
+                                                class="countdown__number">60</text>
                                             <text x="50%" y="50%" dy="28" class="countdown__caption">Seconds</text>
                                         </svg>
                                     </div>
@@ -255,7 +265,7 @@
         </nav>
     </section>
     <!--Nadia block About Us end-->
-    
+
     <!--Mykhailo  block new products start-->
     <section class="new-arrivals" id="new-arrivals">
         <div class="new-arrivals_text">
@@ -292,7 +302,7 @@
                     <p class="puma-textile__price-text product-price-text">$200,00</p>
                 </div>
                 <div class="puma-textile__buttom product-button-container">
-                    <button class="new-arrivals-button product-button" type="button" >Add to Cart</button>
+                    <button class="new-arrivals-button product-button" type="button">Add to Cart</button>
                 </div>
             </div>
             <div class="new-arrivals_carousel_nike-winter new-arrivals-product">
@@ -307,7 +317,7 @@
                     <p class="nike-winter__price-text product-price-text">$200,00</p>
                 </div>
                 <div class="nike-winter__buttom product-button-container">
-                    <button class="new-arrivals-button product-button" type="button" >Add to Cart</button>
+                    <button class="new-arrivals-button product-button" type="button">Add to Cart</button>
                 </div>
             </div>
             <div class="new-arrivals_carousel_adidas-balck new-arrivals-product">
@@ -321,7 +331,7 @@
                     <p class="adidas-balck__price-text product-price-text">$200,00</p>
                 </div>
                 <div class="adidas-balck__buttom product-button-container">
-                    <button class="new-arrivals-button product-button" type="button" >Add to Cart</button>
+                    <button class="new-arrivals-button product-button" type="button">Add to Cart</button>
                 </div>
             </div>
             <div class="new-arrivals_carousel_reebok-red new-arrivals-product">
@@ -335,7 +345,7 @@
                     <p class="reebok-red__price-text product-price-text">$200,00</p>
                 </div>
                 <div class="reebok-red__buttom product-button-container">
-                    <button class="new-arrivals-button product-button" type="button" >Add to Cart</button>
+                    <button class="new-arrivals-button product-button" type="button">Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -376,7 +386,9 @@
             <div class="underline"></div>
             <p class="blog__head-text__about">Read the latest articles from our experts.</p>
         </div>
-        <div class="blog__blog-location"><p>No blog posts yet...</p></div>
+        <div class="blog__blog-location">
+            <p>No blog posts yet...</p>
+        </div>
     </section>
     <!--Mykhailo  block blog end-->
 </body>
