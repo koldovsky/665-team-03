@@ -1,0 +1,16 @@
+.why__choose-block-text { 
+    height: 621px;
+    width: 94%;
+    margin: 50px auto;
+    text-align: center;
+    font-family: var(--font-for-title);
+    line-height: 2.5rem;
+    font-size: 2.4rem;
+    display: inline;
+}
+
+
+.why__choose-block-text .underline{
+    margin: 30px auto;
+    width: 10%;
+}
