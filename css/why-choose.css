@@ -1,16 +1,72 @@
-.why__choose-block-text { 
-    height: 621px;
-    width: 94%;
-    margin: 50px auto;
-    text-align: center;
-    font-family: var(--font-for-title);
-    line-height: 2.5rem;
-    font-size: 2.4rem;
-    display: inline;
+@import url(common.css); 
+
+
+
+.why__choose-block {
+    padding-top: 50px;
+    padding-bottom: 90px;
+    padding-left: 40px;
+    padding-right: 40px;
 }
 
+.all-cards {
+    margin-top: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+ 
 
-.why__choose-block-text .underline{
-    margin: 30px auto;
-    width: 10%;
+}
+
+.all-cards .card {
+    padding-left: 15px;
+    padding-right: 15px;
+    
+    border: 2px solid #e0e0e0; 
+    
+}
+
+ .all-cards .card:not(:first-child) {
+    margin-top: 45px;
+} 
+
+.all-cards .card .card-item {
+    padding: 31px 27px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.card-item img {
+    max-width: 50px;
+    
+}
+
+.card-item h4 {
+    margin-top: 20px;
+    font-family: var(--font-for-title);
+    font-size: 22px;
+    color: var(--main-black-color);
+    font-weight: 400;
+}
+.card-item p {
+    margin-top: 20px;
+    color: var(--main-gray-color);
+}
+
+@media(min-width: 768px) {
+    .all-cards {
+        flex-direction: row;
+    } 
+    .all-cards .card:not(:first-child) {
+        margin-top: 0;
+    
+    } 
+    .card {
+        margin: 0 15px;
+        flex-basis: 50%;
+    }
 }
