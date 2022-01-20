@@ -9,12 +9,16 @@
     --main-white-color: rgb(255, 255, 255);
     --divider-gray-color:rgb(224, 224, 224);
     --countdown-border:#9b9b9b;
-    font-family: 'PT Sans', sans-serif; /*Main font-family on a page*/
+     
 }
 
 * {
     margin: 0;
     padding: 0;
+}
+
+body {
+    font-family: 'PT Sans', sans-serif; /*Main font-family on a page*/
 }
 
 img {
