@@ -1,8 +1,64 @@
 @import url(common.css); 
 
 
+
 .why__choose-block {
     padding-top: 50px;
     padding-bottom: 90px;
+    padding-left: 40px;
+    padding-right: 40px;
 }
 
+.all-cards {
+    margin-top: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+ 
+
+}
+
+.all-cards .card {
+    padding-left: 15px;
+    padding-right: 15px;
+    
+    border: 2px solid #e0e0e0; 
+    
+}
+
+.all-cards .card:not(:first-child) {
+    margin-top: 45px;
+}
+
+.all-cards .card .card-item {
+    padding: 31px 27px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.card-item img {
+    max-width: 50px;
+    
+}
+
+.card-item h4 {
+    margin-top: 20px;
+    font-family: var(--font-for-title);
+    font-size: 22px;
+    color: var(--main-black-color);
+    font-weight: 400;
+}
+.card-item p {
+    margin-top: 20px;
+    color: var(--main-gray-color);
+}
+
+@media(min-width: 768px) {
+    .all-cards {
+        flex-direction: row;
+    } 
+}
