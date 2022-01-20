@@ -26,9 +26,9 @@
     
 }
 
-.all-cards .card:not(:first-child) {
+ .all-cards .card:not(:first-child) {
     margin-top: 45px;
-}
+} 
 
 .all-cards .card .card-item {
     padding: 31px 27px;
@@ -61,4 +61,12 @@
     .all-cards {
         flex-direction: row;
     } 
+    .all-cards .card:not(:first-child) {
+        margin-top: 0;
+    
+    } 
+    .card {
+        margin: 0 15px;
+        flex-basis: 50%;
+    }
 }
