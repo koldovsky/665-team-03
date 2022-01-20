@@ -12,6 +12,7 @@
     font-family: 'PT Sans', sans-serif; /*Main font-family on a page*/
 }
 
+
 * {
     margin: 0;
     padding: 0;
@@ -67,4 +68,9 @@ header.section_header > p {
     letter-spacing: 0;
     color: var(--main-gray-color); 
     text-transform: none; 
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
 }
