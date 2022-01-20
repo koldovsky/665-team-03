@@ -1,0 +1,123 @@
+.header__top-row {
+    display: none;
+}
+
+.header__nav {
+    display: flex;
+    background-color: var(--main-black-color);
+}
+
+.header__nav-links {
+    display: none;
+}
+
+.header__nav-icons {
+    display: none;
+}
+
+.header__nav-logo {
+    padding: 30px;
+}
+
+.header__nav-logo-img {
+    width: 168px;
+}
+
+.header__banner {
+    background-image: url(../img/header/header-banner.jpg);
+    background-size: cover;
+    display: block;
+    padding-top: 110px;
+    padding-bottom: 110px;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.header__banner-text {
+    font-family: var(--font-for-title);
+    color: var(--main-gray-color);
+    font-size: 22px;
+    padding-bottom: 15px;
+}
+
+.header__banner-title {
+    font-family: var(--font-for-title);
+    font-size: 62px;
+    font-weight: 400;
+    line-height: 62px;
+    padding-bottom: 50px;
+}
+
+.highlight {
+    color: var(--main-red-color);
+}
+
+.header_banner-button-link {
+    padding: 15px 40px 15px 25px;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    background-color: var(--main-red-color);
+    transition: background-color 0.5s;
+    font-weight: 800;
+}
+
+.header_banner-button-link:hover {
+    background-color: #000000;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+@media (min-width: 990px) {
+    .header__top-row {
+        display: initial;
+    }
+    
+    .header__nav-links {
+        display: initial;
+    }
+    
+    .header__nav-icons {
+        display: initial;
+        padding-right: 20px;
+    }
+
+    .header__top-row {
+        display: flex;
+        justify-content: space-between;
+        background-color: var(--main-red-color);
+        color: #ffffff;
+        padding: 15px 30px 15px 30px;
+        font-weight: 800;
+        font-size: 14px;
+    }
+    
+    .header__top-row-link-email {
+        color: #ffffff;
+        font-size: 14px;
+        padding-right: 10px;
+    }
+
+    .header__top-row-link-phone {
+        color: #ffffff;
+        font-size: 14px;
+    }
+
+    .header__top-row-link-email:hover {
+        text-decoration: underline;
+    }
+
+    .header__top-row-link-phone:hover {
+        text-decoration: underline;
+    }
+
+    .header__nav {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    a {
+        color: #ffffff;
+    }
+}
