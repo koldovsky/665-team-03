@@ -1,6 +1,6 @@
 @import url(common.css);
 .keep-fit {
-    background-image: url(/img/keep-fit/keep-fit.jpg);
+    background-image: url(../img/keep-fit/keep-fit.jpg);
     background-size: cover;
     background-position: 70% 20%;
     display: flex;
