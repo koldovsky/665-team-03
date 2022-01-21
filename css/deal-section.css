@@ -95,6 +95,11 @@
 .column__content .column-1 .deal-price del {
     font-size: 23px;
     font-weight: bold;
+   
+}
+
+.deal-price del span {
+    text-decoration: line-through;
 }
 
 .column__content .column-1 .deal-subtitle {
@@ -168,6 +173,14 @@
     flex-grow: 4;
     border: 1px solid var(--countdown-border);
     border-radius: 5px;
+    cursor: pointer;
+    transition: all 1s ease;
+}
+
+.countdown__item:hover {
+    background-color: #fff;
+    color: black;
+    transform: scale(1.1);
 }
 
 .countdown__item:before {

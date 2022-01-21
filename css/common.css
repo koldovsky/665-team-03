@@ -9,12 +9,17 @@
     --main-white-color: rgb(255, 255, 255);
     --divider-gray-color:rgb(224, 224, 224);
     --countdown-border:#9b9b9b;
-    font-family: 'PT Sans', sans-serif; /*Main font-family on a page*/
+    --main-font-family: 'PT Sans', sans-serif;
 }
+
 
 * {
     margin: 0;
     padding: 0;
+}
+
+body {
+    font-family: var(--main-font-family) /*Main font-family on a page*/
 }
 
 img {
@@ -67,4 +72,9 @@ header.section_header > p {
     letter-spacing: 0;
     color: var(--main-gray-color); 
     text-transform: none; 
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
 }

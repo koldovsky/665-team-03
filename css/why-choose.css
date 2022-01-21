@@ -1,0 +1,77 @@
+@import url(common.css); 
+
+
+.why__choose-block {
+    padding: 50px 0 90px 0;
+}
+
+.all-cards {
+
+    display: flex;
+    flex-direction: column;
+    margin-top: 45px;
+}
+
+.all-cards .card {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 30px;
+}
+
+.all-cards .card .card-item {
+    height: 100%;
+    width: 100%;
+    padding: 31px 27px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #e0e0e0;
+}
+
+.card-item img {
+    max-width: 50px; 
+}
+
+.card-item h4 {
+    font-family: 'Bebas Neue', cursive;
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.card-item p {
+    margin-top: 20px;
+    font-family: 'PT Sans' ,sans-serif;
+    color: gray;
+}
+
+@media (min-width: 768px) {
+    .all-cards {
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    .card {
+        flex-basis: 50%;
+    }
+}
+
+@media (min-width: 992px) {
+    .all-cards {
+        padding: 50px 0 120px 0;
+    }
+    .card {
+        flex-basis: 25%;
+    }
+    .card-item h4 {
+        font-size: 24px;
+    }
+ 
+    .all-cards .card .card-item {
+        padding: 30px 20px;
+
+    }
+} 
+
