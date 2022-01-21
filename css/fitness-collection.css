@@ -15,8 +15,6 @@
         justify-content: center;
         min-height: 50vh;
     }
-} 
-
 
 .fitness-collection-text {
     font-family: var(--font-for-title);
@@ -32,7 +30,6 @@
     line-height: 62px;
     padding-bottom: 50px;
     display: block;
-
 }
 
 .highlight {
