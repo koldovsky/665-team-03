@@ -101,3 +101,10 @@ background-color: var(--main-white-color);
 .keep-fit__workout__button a:hover {
 color: var(--main-black-color);
 }
+
+@media (min-width: 768px) {
+    .keep-fit__workout {
+        display: flex;
+        align-items: flex-end;
+    }
+}
