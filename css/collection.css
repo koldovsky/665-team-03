@@ -21,21 +21,21 @@
   }
   
   .collection .item-1 {
-    background-image: url(/images/collection/bg-new-arrivals.svg);
+    background-image: url(../img/collection/bg-new-arrivals.svg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
   }
   
   .collection .item-2 {
-    background-image: url(/images/collection/bg-trainers.webp);
+    background-image: url(../img/collection/bg-trainers.webp);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
   }
   
   .collection .item-3 {
-    background-image: url(/images/collection/bg-hot-sale.webp);
+    background-image: url(../img/collection/bg-hot-sale.webp);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
