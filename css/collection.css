@@ -1,0 +1,102 @@
+.shop__collection {
+    padding-top: 90px;
+    padding-bottom: 60px;
+  }
+  
+  .collection__inner {
+    padding: 0 24px;
+  }
+  
+  .collection .collection__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 300px;
+    height: 100%;
+    padding: 33px;
+  }
+  
+  .collection .collection__item:not(:first-child) {
+    margin-top: 50px;
+  }
+  
+  .collection .item-1 {
+    background-image: url(/images/collection/bg-new-arrivals.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .collection .item-2 {
+    background-image: url(/images/collection/bg-trainers.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .collection .item-3 {
+    background-image: url(/images/collection/bg-hot-sale.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .collection__item h3 {
+    font-family: "Bebas Neue", cursive;
+    font-size: 38px;
+    font-weight: 400;
+  }
+  
+  .collection__item .divider__wrapper {
+    display: flex;
+    padding: 15px 0;
+    position: relative;
+  }
+  
+  .collection__item .divider__wrapper .collection__divider {
+    height: 2px;
+    width: 18%;
+    background-color: #f40106;
+  }
+  
+  .collection__item .btn__collection {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 25.2px;
+    color: rgb(34, 35, 35);
+    cursor: pointer;
+  }
+  
+  .collection__item .btn__collection:hover {
+    text-decoration: underline;
+  }
+  
+  @media (min-width: 768px) {
+    .shop__collection {
+      padding-top: 120px;
+      padding-bottom: 60px;
+    }
+    .collection__inner {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+    .collection {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 30px;
+    }
+    .collection .collection__item {
+      min-height: 375px;
+    }
+    .collection .collection__item:not(:first-child) {
+      margin-top: 0;
+    }
+    .collection__item h3 {
+      font-size: 52px;
+      line-height: 52.28px;
+    }
+    .collection__item .divider__wrapper .collection__divider {
+      width: 35%;
+    }
+  }
+  
