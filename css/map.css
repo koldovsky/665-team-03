@@ -1,14 +1,19 @@
 @import url(common.css);
+.map-block{
+height: 90vh;
+width: 100%;
+display: flex;
+position: relative;
+}
+    
 .map-block iframe{
-height: 100vh;
+height: 90vh;
 width: 100%;
 z-index: 0;
-position: relative;
 }
     
 .map-block__contacts{
 z-index: 1;
-position: absolute;
 top: 0;
 right: 0;
 bottom: 0;
@@ -16,6 +21,7 @@ left: 0;
 display: flex;
 align-items: flex-end;
 justify-content: center;
+position: absolute;
 }
     
 .contacts{
@@ -27,7 +33,7 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 margin-bottom: 100px;  
-width: 90%; 
+flex-basis: 40%;
 }
     
 .contacts__header{
@@ -54,7 +60,7 @@ padding: 15px;
     
 @media (min-width: 768px){
     .contacts{
-         width: 40%;
+        width: 40%;
     }
 }
 @media (min-width: 992px){
