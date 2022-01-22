@@ -5,7 +5,7 @@
 }
 
 .brand__slider {
-    padding-top: 120px;
+    padding-top: 60px;
     padding-bottom: 60px;
     padding-left: 15px;
     padding-right: 15px;
@@ -21,12 +21,12 @@
     flex-wrap: wrap;
 }
 
-.brand__slider .slider__container {
-    padding: 0 40px;
+.brand__slider .slider__content {
+    padding: 0;
 }
 
 .slider__inner .brand-item {
-    border: 2px solid var(--divider-gray-color);
+    border: 2px solid #e0e0e0;
     margin: 0 15px;
     width: 263px;
     height: 158px;
@@ -36,7 +36,7 @@
 .slider__inner .brand-item img { 
     display: block;
     height: 100%;
-    padding: 20px;
+    padding: 10px;
     margin: auto;
     object-fit: contain;
     width: 100%;
@@ -49,30 +49,52 @@ span {
 .slider .priv_arrow img {
     position: absolute;
     top: 50%;
-    left: -15px;
+    left: 15px;
     width: 30px;
     height: 30px;
-    opacity: .85;
+    opacity: .7;
+    background-color: gray;
+    padding: 5px;
     text-align: center;
     cursor: pointer;
     transition: opacity .2s ease-out;
     transform: translate(-50%, -50%);
+    z-index: 1;
 }
 
 .slider .next_arrow img  {
     position: absolute;
     top: 50%;
-    right: -15px;
+    right: 15px;
     width: 30px;
     height: 30px;
     opacity: .85;
+    background-color: gray;
+    padding: 5px;
     text-align: center;
     cursor: pointer;
     transition: opacity .2s ease-out;
     transform: translate(50%, -50%);
+    z-index: 1;
 }
 
 .slider .priv_arrow img:hover,
 .slider .next_arrow img:hover {
     opacity: 1;
+}
+
+@media(min-width:768px) {
+    .brand__slider .slider__content {
+        padding: 0 40px;
+    }
+    .slider .priv_arrow img {
+        left: -15px;
+        background-color: transparent;
+        padding: 0;
+    }
+    .slider .next_arrow img {
+        right: -15px;
+        background-color: transparent;
+        padding: 0;
+    }
 }
