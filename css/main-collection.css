@@ -1,0 +1,88 @@
+.main__collection {
+    padding-top: 90px;
+}
+
+#main__collection-title-text {
+    font-size: 38px;
+}
+
+.main__collection-text {
+    text-align: center;
+}
+
+.nav {
+    margin-top: 45px;
+}
+
+.nav-link {
+    color: var(--countdown-border);
+}
+
+.nav-link:hover {
+    color: var(--main-black-color);
+}
+
+.main__collection-card-name {
+    font-family: var(--main-font-family);
+    font-size: 18px;
+    color: var(--main-gray-color);
+    margin-top: 8px;
+}
+
+.main__collection-card-name:hover {
+    text-decoration: underline;
+}
+
+.main__collection-card-price {
+    font-family: var(--main-font-family);
+    font-size: 18px;
+    color: var(--main-red-color);
+    font-weight: 700;
+    margin-top: 16px;
+}
+
+.main__collection-card-btn {
+    font-family: var(--main-font-family);
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    color: var(--main-white-color);
+    background-color: var(--main-black-color);
+    transition: background-color 0.5s;
+    border-color: var(--main-black-color);
+    padding: 10px 20px 10px 20px;
+    margin-bottom: 50px;
+}
+
+.main__collection-card-btn:hover {
+    background-color: var(--main-red-color);
+    transition: background-color 0.5s;
+    border-color: var(--main-red-color);
+}
+
+@media (min-width: 768px) {
+    #main__collection-title-text {
+        font-size: 52px;
+    }
+    
+    .nav {
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+    
+    .main__collection-cards-women {
+        display: flex;
+        gap: 20px; 
+    }
+
+    .main__collection-cards-men {
+        display: flex;
+        gap: 20px; 
+    }
+
+    .main__collection-cards-shoes {
+        display: flex;
+        gap: 20px; 
+    }
+}
+
