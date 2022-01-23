@@ -122,6 +122,7 @@
     display: inline-block;  
     position: relative;
     padding-right: 32px;
+    color: var(--main-white-color);
 }
 
 .column__content .btn-holder .btn-deal::after {
