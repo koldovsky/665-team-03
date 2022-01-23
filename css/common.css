@@ -10,6 +10,7 @@
     --divider-gray-color:rgb(224, 224, 224);
     --countdown-border:#9b9b9b;
     --main-font-family: 'PT Sans', sans-serif;
+    --subheading-color: rgba(255,255,255,0.62);
 }
 
 
@@ -27,7 +28,7 @@ img {
     width: 100%;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
