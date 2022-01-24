@@ -8,7 +8,7 @@ height: 100vh;
 width: 100%;
 }
     
-.container{
+.container-keep-fit{
 display: flex;
 justify-content: flex-end;
 align-items: center;
