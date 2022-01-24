@@ -6,8 +6,8 @@ $('.slider').slick({
     cssEase: 'ease-in-out',
     slidesToShow: 4,
     slidesToScroll: 1,
-    prevArrow:' <span class="priv_arrow"><img src="../img/brand-slider/arrow-left.svg"/></span>',
-    nextArrow:' <span class="next_arrow"><img src="../img/brand-slider/arrow-right.svg"/></span>',
+    prevArrow:' <span class="priv_arrow"><img src="./img/brand-slider/arrow-left.svg"/></span>',
+    nextArrow:' <span class="next_arrow"><img src="./img/brand-slider/arrow-right.svg"/></span>',
     responsive: [
       {
         breakpoint: 1024,
