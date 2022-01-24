@@ -6,13 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sport Clothes Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="shortcut icon" href="img/header/sport-store-icon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
-    <!-- Maksym's block start -->
+    <!-- Maksym's block header start -->
     <header class="header">
         <div class="header__top-row">
             <div class="container">
@@ -65,9 +67,111 @@
             </div>
         </div>
     </header>
-    <!-- Maksym's block end -->
+    <!-- Maksym's block header end -->
 
-<!-- Chympaiesh Mykola collection block Strat -->
+    <!-- Maksym's block main collection start -->
+    <section class="main__collection">
+        <div class="container">
+            <header class="section_header">
+                <h2 class="main__collection-title-text" id="main__collection-title-text">MAIN COLLECTION<span
+                        class="highlight">.</span></h2>
+                <p class="main__collection-text">Shop our main fitness collection for men and women represented by the
+                    famous brands.</p>
+            </header>
+            <!-- Bootstrap nav-tabs-start -->
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
+                        type="button" role="tab" aria-controls="nav-home" aria-selected="true">Women</button>
+                    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
+                        type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Men</button>
+                    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact"
+                        type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Shoes</button>
+                </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class="main__collection-cards-women">
+                        <div class="main__collection-card">
+                            <img src="img/main-collection/puma-sports-bra.jpg" alt="Puma sport bra"
+                                class="main__collection-card-img">
+                            <p class="main__collection-card-name">Puma Sports Bra</p>
+                            <p class="main__collection-card-price">$12,00</p>
+                            <button class="main__collection-card-btn">Add to Cart</button>
+                        </div>
+                        <div class="main__collection-card">
+                            <img src="img/main-collection/reebok-long-sleeve-top.jpg" alt="Reebok Long Sleeve Top"
+                                class="main__collection-card-img">
+                            <p class="main__collection-card-name">Reebok Long Sleeve Top</p>
+                            <p class="main__collection-card-price">$18,00</p>
+                            <button class="main__collection-card-btn">Add to Cart</button>
+                        </div>
+                        <div class="main__collection-card">
+                            <img src="img/main-collection/quicksilver-workout-top.jpg" alt="Quicksilver Workout Top"
+                                class="main__collection-card-img">
+                            <p class="main__collection-card-name">Quicksilver Workout Top</p>
+                            <p class="main__collection-card-price">$12,00</p>
+                            <button class="main__collection-card-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                    <div class="main__collection-cards-men">
+                        <div class="main__collection-card">
+                            <img src="img/main-collection/adidas-compression-tee.jpg" alt="Adidas Compression Tee"
+                                class="main__collection-card-img">
+                            <p class="main__collection-card-name">Adidas Compression Tee</p>
+                            <p class="main__collection-card-price">$33,00</p>
+                            <button class="main__collection-card-btn">Add to Cart</button>
+                        </div>
+                        <div class="main__collection-card">
+                            <img src="img/main-collection/reebok-fitness-jacket.jpg" alt="Reebok Fitness Jacket"
+                                class="main__collection-card-img">
+                            <p class="main__collection-card-name">Reebok Fitness Jacket</p>
+                            <p class="main__collection-card-price">$52,00</p>
+                            <button class="main__collection-card-btn">Add to Cart</button>
+                        </div>
+                        <div class="main__collection-card">
+                            <img src="img/main-collection/quicksilver-tech-t-shirt.jpg" alt="Quicksilver Tech T-Shirt"
+                                class="main__collection-card-img">
+                            <p class="main__collection-card-name">Quicksilver Tech T-Shirt</p>
+                            <p class="main__collection-card-price">$21,00</p>
+                            <button class="main__collection-card-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                    <div class="main__collection-cards-shoes">
+                        <div class="main__collection-card">
+                            <img src="img/main-collection/nike-amanda-running-shoes.jpg" alt="Nike Amanda Running Shoes"
+                                class="main__collection-card-img">
+                            <p class="main__collection-card-name">Nike Amanda Running Shoes</p>
+                            <p class="main__collection-card-price">$120,00</p>
+                            <button class="main__collection-card-btn">Add to Cart</button>
+                        </div>
+                        <div class="main__collection-card">
+                            <img src="img/main-collection/puma-basket-shoes.jpg" alt="Puma Basket Shoes"
+                                class="main__collection-card-img">
+                            <p class="main__collection-card-name">Puma Basket Shoes</p>
+                            <p class="main__collection-card-price">$140,00</p>
+                            <button class="main__collection-card-btn">Add to Cart</button>
+                        </div>
+                        <div class="main__collection-card">
+                            <img src="img/main-collection/adidas-campus.jpg" alt="Adidas Campus"
+                                class="main__collection-card-img">
+                            <p class="main__collection-card-name">Adidas Campus</p>
+                            <p class="main__collection-card-price">$130,00</p>
+                            <button class="main__collection-card-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Boostrap nav-tabs end -->
+        </div>
+    </section>
+    <!-- Maksym's block main collection end -->
+
+    <!-- Chympaiesh Mykola collection block Strat -->
     <section class="shop__collection">
         <div class="container">
             <div class="collection__inner">
@@ -115,22 +219,23 @@
             </div>
         </div>
     </section>
-<!-- Chympaiesh Mykola collection block End -->
+    <!-- Chympaiesh Mykola collection block End -->
 
     <!--Sanya Block start-->
-    <section>
-        <div class="get-your-discount">
-            <div class="section_baner">
-                <div class="section-text">
-                    <p class="section_name">SALE OF THE MONTH</p>
+    <section class=discount>
+        <div class="discount__inner">
+            <div class="container">
+                <div class="discaunt__content">
+                    <p>SALE OF THE MONTH</p>
                     <h2 class="section_words">GET YOUR DISCOUNT<span class="red-dot">.</span></h2>
-                    <a class="shop-now" href="#maincoll">Shop now </a>
+                    <div class="discaunt__btn-wrapper">
+                        <a class="btn-discaunt" href="#">Shop Now <i class="fas fa-long-arrow-alt-right"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    
     <!--Sanya Block end-->
 
     <!-- Section Deal Chympaiesh Mykola Start-->
@@ -270,37 +375,42 @@
         </div>
     </section>
     <!--Prybula Mykola block Why Choose Us  end-->
-    
+
     <!--Nadia block About Us start-->
-    <section id="about-us" class="about__us" style="background-color:#222323">
-        <div class="about__us__img">
-            <img class="about__us__img-two-men" src="img/about-us/two-men.webp" alt="two_men">
+    <section id="about-us" class="about-us" style="background-color:#222323">
+        <div class="about-us__img">
+            <img class="about-us__img-two-men" src="img/about-us/two-men.webp" alt="two_men">
         </div>
-        <div class="about__us__text">
-            <h2 class="about__us__text-head"><span class="highlighted">ABOUT US</span> <span
-                    class="highlighted">.</span></h2>
-            <div class="divider"></div>
-            <p class="about__us__text-content"><span class="highlighted">
-                    Workout is an American fitness store created by fitness geeks for those who love sport and try to
-                    keep fit.
-                </span>
-            </p>
-            <p class="about__us__text-content2"><span class="highlighted">
-                    At Workout, we know that great results do not come from standing still. We all need to move, push
-                    boundaries,
-                    and achieve better results every day. The mission of our shop is to support you in this.
-                    <br>
-                    We're sure that everyday fitness can change your lives and bodies forever. And we keep selling
+        <div class="about-us__wrapper">
+            <div class="about-us__text">
+                <h2 class="about-us__text-head">ABOUT US<span class="dot--color">.</span></h2>
+                <div class="divider">
+                    
+                </div>
+                <p class="about-us__text-content">
+                        Workout is an American fitness store created by fitness geeks for those who love sport and try
+                        to
+                        keep fit.
+                </p>
+                <p class="about-us__text-content2">
+                        At Workout, we know that great results do not come from standing still. We all need to move,
+                        push
+                        boundaries,
+                        and achieve better results every day. The mission of our shop is to support you in this.
+                </p>
+                <br>
+                <p class="about-us__text-content2">We're sure that everyday fitness can
+                    change your lives and bodies forever. And we keep selling
                     comfortable and
                     high-tech clothes and shoes for your outstanding results.
-                </span>
-            </p>
+                </p>
+            </div>
+            <nav class="about-us__nav-icons">
+                <a href=""><i class="fab fa-facebook"></i></a>
+                <a href=""><i class="fab fa-instagram"></i></a>
+                <a href=""><i class="fab fa-youtube"></i></a>
+            </nav>
         </div>
-        <nav class="about__us__nav-icons">
-            <a href=""><i class="fab fa-facebook"></i></a>
-            <a href=""><i class="fab fa-instagram"></i></a>
-            <a href=""><i class="fab fa-youtube"></i></a>
-        </nav>
     </section>
     <!--Nadia block About Us end-->
 
@@ -311,15 +421,13 @@
                 <p class="fitness-collection-text">TRENDING</p>
                 <h2 class="fitness-collection-title">NEW FITNESS COLLECTION<span class="highlight">.</span></h2>
                 <div class="fintess-collection-button-container">
-                <a class="fitness-collection-button-link" href="#main-collection">Shop Now <i
-                        class="fas fa-long-arrow-alt-right"></i></a>
+                    <a class="fitness-collection-button-link" href="#main-collection">Shop Now <i
+                            class="fas fa-long-arrow-alt-right"></i></a>
                 </div>
             </div>
         </div>
     </section>
-    
     <!--Prybula Mykola block New fitness collection end-->
-
 
     <!--Mykhailo  block new products start-->
     <section class="new-arrivals" id="new-arrivals">
@@ -411,37 +519,42 @@
     <!--Natalia block Keep Fit start-->
     <section class="keep-fit">
         <div class="keep-fit__container">
-        <div class="keep-fit__workout">
-            <div class="keep-fit__workout__header">
-                <p class="keep-fit__workout__subheading">100% ORIGINAL BRANDS</p>
-                <h2 class="keep-fit__workout__heading">KEEP FIT WITH COMFORT.</h2>
-            </div>
+            <div class="keep-fit__workout">
+                <div class="keep-fit__workout__header">
+                    <p class="keep-fit__workout__subheading">100% ORIGINAL BRANDS</p>
+                    <h2 class="keep-fit__workout__heading">KEEP FIT WITH COMFORT.</h2>
+                </div>
                 <div class="keep-fit__workout__list">
                     <div class="keep-fit__workout__list__icon">
-                        <img src="img/keep-fit/keep-fit-icons.svg" alt="icon" class="keep-fit__workout__icon-list__icon">
+                        <img src="img/keep-fit/keep-fit-icons.svg" alt="icon"
+                            class="keep-fit__workout__icon-list__icon">
                         <p>Top brands</p>
                     </div>
                     <div class="keep-fit__workout__list__icon">
-                        <img src="img/keep-fit/keep-fit-icons.svg" alt="icon" class="keep-fit__workout__icon-list__icon">
+                        <img src="img/keep-fit/keep-fit-icons.svg" alt="icon"
+                            class="keep-fit__workout__icon-list__icon">
                         <p>Delivery with DHL</p>
                     </div>
                     <div class="keep-fit__workout__list__icon">
-                        <img src="img/keep-fit/keep-fit-icons.svg" alt="icon" class="keep-fit__workout__icon-list__icon">
+                        <img src="img/keep-fit/keep-fit-icons.svg" alt="icon"
+                            class="keep-fit__workout__icon-list__icon">
                         <p>Easy returns</p>
                     </div>
                 </div>
-                    <div class="keep-fit__workout__paragraph">
-                        <p class="keep-fit__workout__paragraph__text">
-                             Workout offers fitness clothing and footwear for those who want to change their lives and bodies for
-                             better. We work only with the best sport brands to ensure that your training is really effective and
-                             comfortable.
-                         </p>
-                     </div>
-             <div class="keep-fit__workout__button" id="keep-fit__workout__button">
-                 <a href="#about-us">Learn more  →</a>
-             </div>
+                <div class="keep-fit__workout__paragraph">
+                    <p class="keep-fit__workout__paragraph__text">
+                        Workout offers fitness clothing and footwear for those who want to change their lives and bodies
+                        for
+                        better. We work only with the best sport brands to ensure that your training is really effective
+                        and
+                        comfortable.
+                    </p>
+                </div>
+                <div class="keep-fit__workout__button" id="keep-fit__workout__button">
+                    <a href="#about-us">Learn more →</a>
+                </div>
+            </div>
         </div>
-    </div>
     </section>
     <!--Natalia block Keep Fit end-->
 
@@ -455,8 +568,9 @@
         <div class="blog__blog-location">
             <p>No blog posts yet...</p>
         </div>
-     </section>
+    </section>
     <!--Mykhailo  block blog end-->
+
     <!--Sanya block start -->
     <section>
         <div class="subscribe">
@@ -476,9 +590,9 @@
                 </div>
             </div>
         </div>
-
     </section>
     <!--Sanya block end-->
+
     <!--Natalia map-block start-->
     <section class="map">
         <div class="map-block">
@@ -494,6 +608,12 @@
         </div>
     </section>
     <!--Natalia map-block end-->
+
+    <!-- Bootstrap JS file start DON'T DELETE!!! -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap JS file end -->
 </body>
 
 </html>

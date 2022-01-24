@@ -1,0 +1,47 @@
+@import url(common.css);
+
+* {
+    box-sizing: border-box;
+}
+.about-us {
+    position: relative;
+color: var(--main-white-color);}
+.about-us__img {
+
+}
+.about-us__img-two-men {
+    object-fit: cover;
+    object-position: 55.202% 13.885%;
+}
+.about-us__text {
+    font-weight: 400;
+}
+.about-us__text-head {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 38px;
+}
+.divider {
+    content:"";
+    display: block;
+    position: left;
+    left: 50%;
+    bottom: -15px;
+    height: 2px;
+    width: 16%;
+    transform: translate(-50%, -50%);
+    background-color: var(--main-red-color);
+}
+.about-us__text-content {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 20px;
+}
+.about-us__text-content2 {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 16px;
+}
+.dot--color {
+    color: var(--main-red-color);
+}
+.about-us__nav-icons {
+        color: var(--main-red-color);
+}
