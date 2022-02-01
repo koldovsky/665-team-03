@@ -50,20 +50,28 @@
 	renderProducts(products);
 
 	let currentSlideIdx = 0;
+    const slides = document.querySelectorAll('.new-arrivals-product');
 
     function showCurrentSlide() {
-        const slideContainer = document.querySelector('.new-arrivals-products');
-		const slides = document.querySelectorAll('.new-arrivals-product').outerHTML;
-		console.log(slides)
-        slideContainer.innerHTML = slides[currentSlideIdx];
-        if (window.innerWidth >= 640) {
+        for(slide of slides){
+            slide.classList.add('hidden-product')
+        }
+        const currentSlide = slides[currentSlideIdx]
+        currentSlide.classList.remove('hidden-product') 
+        if (window.innerWidth >= 640) { 
             const secondSlideIdx = currentSlideIdx + 1 >= slides.length ? 0 : currentSlideIdx + 1;
-            slideContainer.innerHTML += slides[secondSlideIdx];
+             slides[secondSlideIdx].classList.remove('hidden-product');
             if (window.innerWidth >= 960) {
                 const thirdSlideIdx = secondSlideIdx + 1 >= slides.length ? 0 : secondSlideIdx + 1;
-                slideContainer.innerHTML += slides[thirdSlideIdx];    
+                slides[thirdSlideIdx].classList.remove('hidden-product');  
+                if (window.innerWidth >= 1100) {
+                    const fourthSlideIdx = thirdSlideIdx + 1 >= slides.length ? 0 : thirdSlideIdx + 1;
+                    slides[fourthSlideIdx].classList.remove('hidden-product');
+                }
+                  
             }
         }
+        
     }
 
     function showNextSlide() {
