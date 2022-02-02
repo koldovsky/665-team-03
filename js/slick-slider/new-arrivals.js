@@ -6,12 +6,12 @@
 		price: "$200,00"
 	}, {
 		id: "2",
-		title: "Puma Textile Running Shoes",
+		title: "Puma Textile Shoes",
 		imgUrl: "img/new-arrivals/new-arrivals-puma.jpg",
 		price: "$65,00"
 	}, {
 		id: "3",
-		title: "Nike Winter Jacket in Blue",
+		title: "Nike Winter Jacket ",
 		imgUrl: "img/new-arrivals/new-arrivals-nike-winter.jpg",
 		price: "$82,00"
 	}, {
@@ -54,26 +54,30 @@
 
     function showCurrentSlide() {
         for(slide of slides){
-            slide.classList.add('hidden-product')
+            slide.classList.add('hidden-product');
         }
-        const currentSlide = slides[currentSlideIdx]
-        currentSlide.classList.remove('hidden-product') 
+        const currentSlide = slides[currentSlideIdx];
+        currentSlide.classList.remove('hidden-product','second-slide' ,'third-slide' , 'fourth-slide') ;
+        currentSlide.classList.add('first-slide') ;
         if (window.innerWidth >= 640) { 
             const secondSlideIdx = currentSlideIdx + 1 >= slides.length ? 0 : currentSlideIdx + 1;
-             slides[secondSlideIdx].classList.remove('hidden-product');
+             slides[secondSlideIdx].classList.remove('hidden-product','first-slide' ,'third-slide' , 'fourth-slide');
+             slides[secondSlideIdx].classList.add('second-slide');
             if (window.innerWidth >= 960) {
                 const thirdSlideIdx = secondSlideIdx + 1 >= slides.length ? 0 : secondSlideIdx + 1;
-                slides[thirdSlideIdx].classList.remove('hidden-product');  
+                slides[thirdSlideIdx].classList.remove('hidden-product','second-slide' ,'first-slide' , 'fourth-slide');  
+                slides[thirdSlideIdx].classList.add('third-slide');
                 if (window.innerWidth >= 1100) {
                     const fourthSlideIdx = thirdSlideIdx + 1 >= slides.length ? 0 : thirdSlideIdx + 1;
-                    slides[fourthSlideIdx].classList.remove('hidden-product');
+                    slides[fourthSlideIdx].classList.remove('hidden-product','second-slide' ,'third-slide' , 'first-slide');
+                    slides[fourthSlideIdx].classList.add('fourth-slide');
                 }
                   
             }
         }
         
     }
-
+    showCurrentSlide()
     function showNextSlide() {
         currentSlideIdx = currentSlideIdx + 1 >= slides.length ? 0 : currentSlideIdx + 1;
         showCurrentSlide();
@@ -84,14 +88,12 @@
         showCurrentSlide();
     }
 
-    showCurrentSlide();
-
     document.querySelector('.new-arrivals_carousel_arrow-right')
          .addEventListener('click', showNextSlide);
 
     document.querySelector('.new-arrivals_carousel_arrow-left')
          .addEventListener('click', showPrevSlide);
 
-
+    
     window.addEventListener('resize', showCurrentSlide);
 })();
