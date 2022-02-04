@@ -1,6 +1,6 @@
 @import url(common.css);
 .footer__top-container{
-background-color: var(--footer-bg-color);
+background-color: #222323;
 color: var(--main-white-color);
 font-family: var(--main-font-family);
 font-size: 15px;
