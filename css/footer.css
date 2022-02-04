@@ -1,4 +1,4 @@
-@@import url(common.css);
+@import url(common.css);
 .footer__top-container{
 background-color: var(--footer-bg-color);
 color: var(--main-white-color);
