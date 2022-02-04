@@ -1,4 +1,7 @@
 @import url(common.css);
+.footer{
+position: relative;
+}
 .footer__top-container{
 background-color: #222323;
 color: var(--main-white-color);
