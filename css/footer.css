@@ -1,6 +1,6 @@
 @import url(common.css);
 .footer{
-position: relative;
+position: absolute;
 }
 .footer__top-container{
 background-color: #222323;
@@ -123,7 +123,7 @@ padding: 10px 0 20px 0;
         display: grid;
         grid-template-columns: 1fr 2fr;
         gap: 30px;
-        padding: 0 0 20px 0;
+        /*padding: 0 0 20px 0;*/
     }
     .footer-header{
         display: flex;
