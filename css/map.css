@@ -7,7 +7,7 @@ position: relative;
 }
 
 .map-container {
-
+display: flex;
 }
     
 .map-block iframe{
