@@ -51,6 +51,10 @@ align-items: center;
 justify-content: center; */
 }
 
+.footer__nav-link__items li {
+padding-left: 0;
+}
+
 .footer__nav-link li{
 display: block;
 margin: 10px 0 0 0;
