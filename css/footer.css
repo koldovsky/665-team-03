@@ -1,7 +1,6 @@
 @import url(common.css);
 .footer{
 background-color: #222323;
-position: absolute;
 }
 .footer__top-container{
 color: var(--main-white-color);
