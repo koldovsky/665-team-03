@@ -65,6 +65,7 @@ color: var(--main-white-color);
 color: var(--main-red-color);
 text-decoration: underline rgb(244, 1, 6);
 cursor: pointer;
+font-weight: 500;
 }
 
 .footer__icons-container{
