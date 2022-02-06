@@ -51,7 +51,7 @@ align-items: center;
 justify-content: center; */
 }
 
-.footer__nav-link__items li {
+.footer__nav-link__items ul {
 padding-left: 0;
 }
 
