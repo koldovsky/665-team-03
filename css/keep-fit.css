@@ -108,16 +108,16 @@ display: flex;
 font-size: 20px;
 line-height: 30px;
 margin: 10px 0 25px 0;
-transform: translate(0, 120%);
+/*transform: translate(0, 120%);
 transition: all 0.3s ease 0s;  
-opacity: 0;
+opacity: 0;*/
 }
 
-.keep-fit__workout__paragraph__text._active {
+/*.keep-fit__workout__paragraph__text._active {
 transform: translate(0px, 0px);
 transition: all 0.8s ease 1s;  
 opacity: 1;
-} 
+} */
 
 .keep-fit__workout__button:hover {
 background-color: var(--main-white-color);
@@ -131,16 +131,16 @@ color: var(--main-black-color);
 display: flex;
 align-self: flex-start;
 border: 2px solid var(--main-white-color);
-transform: translate(0, 120%);
+/*transform: translate(0, 120%);
 transition: all 0.3s ease 0s;  
-opacity: 0;
+opacity: 0;*/
 }
 
-.keep-fit__workout__button._active {
+/*.keep-fit__workout__button._active {
 transform: translate(0px, 0px);
 transition: all 0.8s ease 1.2s;  
 opacity: 1;
-}
+}*/
     
 .keep-fit__workout__button a{
 display: block;
