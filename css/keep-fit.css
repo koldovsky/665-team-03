@@ -29,12 +29,29 @@ font-family: var(--font-for-title);
 .keep-fit__workout__subheading {
 font-size: 22px;
 color: var(--subheading-color);
+transform: translate(0px, 120%);
+opacity: 0;
+transition: all 0.8s ease 0s;
+}
+
+.keep-fit__workout__subheading._active {
+transform: translate(0px, 0px);
+opacity: 1;
+transition: all 0.8s ease 0.4s;
 }
     
 .keep-fit__workout__heading {
 font-size: 60px;
 color: var(--main-white-color);
 letter-spacing: 1px;
+transform: translate(0px, 120%);
+opacity: 0;
+transition: all 0.8s ease 0s;
+}
+
+.keep-fit__workout__heading._active {
+transform: translate(0px, 0px);
+opacity: 1;
 }
     
 .keep-fit__workout__list__icon, .keep-fit__workout__paragraph, .keep-fit__workout__button a{
