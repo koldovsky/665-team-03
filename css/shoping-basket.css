@@ -1,0 +1,41 @@
+body{
+    position:relative;
+}
+.shoping-basket{
+    position:fixed;
+    top:100px;
+    right:-100px;
+    height: 70px;
+    width: 70px;
+    z-index: 1;
+    background-color:var(--main-white-color);
+    border-radius: 30%;
+    border:none;
+}
+.shoping-basket.active{
+    right:15px;
+    transition:all 0.4s;
+}
+.shoping-basket-img{
+width:90%;
+height:90%;
+margin:auto;
+}
+.shoping-basket-counter.active{
+    position:absolute;
+    top:-5px;
+    left: -5px;
+    content:attr(data-value);
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    color:white;
+    font-weight: bold;
+    text-align: center;
+    background-color: var(--main-red-color);
+    border-radius: 50%;
+}
+
+.shoping-basket.active:hover{
+    transform: scale(1.2);
+}
