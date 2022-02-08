@@ -67,7 +67,7 @@ flex-direction: column;
     
 .keep-fit__workout__list__icon{
 display: flex;
-margin: 10px 0;
+/*margin: 10px 0;*/
 transform: translate(0, 120%);
 transition: all 0.3s ease 0s;  
 opacity: 0;
