@@ -627,7 +627,7 @@
     <!-- Basket end -->
     <!-- Modal window for basket start -->
     <div class="modal-basket-container">
-        <div class="modal-basket active">
+        <div class="modal-basket">
             <div class="modal-basket-header">
                 <div class="modal-basket-mane">Shopping cart</div>
                 <button class="modal-basket-close">x</button>
@@ -637,28 +637,47 @@
                 <div class="modal-basket-empty-text">Continue shopping to add product to your cart</div>
             </div>
             <div class="modal-basket-products">
-                <div class="modal-basket-products-title">Products</div>
-                <div class="modal-basket-product-container">
-                    <div class="modal-basket-product-img-container"><img src="" alt=""
-                            class="modal-basket-product-img">1</div>
-                    <div class="modal-basket-product-info">
-                        <div class="modal-basket-product-name">1</div>
-                        <div class="modal-basket-product-quantity">
-                            <input class="modal-basket-product-input" type="text">
-                            <button class="modal-basket-product-button up"></button>
-                            <button class=" modal-basket-product-button down"></button>
-                        </div>
-                        <div class="modal-basket-product-price">1</div>
+                <div class="modal-basket-products-heading">
+                    <div class="modal-basket-products-title">Products</div>
+                    <div class="modal-basket-checkbox">
+                        <input type="radio" id="USD" name="curency">
+                        <label for="USD">USD</label>
+                        <input type="radio" id="UAH" name="curency">
+                        <label for="UAH">UAH</label>
                     </div>
-                    <button class="modal-basket-product-delete"></button>
                 </div>
-                <div class="modal-basket-total-price">1</div>
             </div>
+            <div class="modal-basket-product-container">
+                <div class="modal-basket-product-img-container"><img src="" alt="" class="modal-basket-product-img">1
+                </div>
+                <div class="modal-basket-product-info">
+                    <div class="modal-basket-product-name">1</div>
+                    <div class="modal-basket-product-quantity">
+                        <input class="modal-basket-product-input" type="text">
+                        <button class="modal-basket-product-button up"></button>
+                        <button class=" modal-basket-product-button down"></button>
+                    </div>
+                    <div class="modal-basket-product-price">1</div>
+                </div>
+                <button class="modal-basket-product-delete"></button>
+            </div>
+            <div class="modal-basket-total-price">1</div>
             <div class="modal-basket-form">
-                <div class="modal-basket-form-title"></div>
+                <div class="modal-basket-form-title">1</div>
+                <form class="modal-basket-form" action="https://formspree.io/f/xayvekle" method="POST">
+                    <label for="name">Name <span class="highlited">*</span></label>
+                    <input type="text" id="name" class="modal-basket-form-window" required>
+                    <label for="email">Email<span class="highlited">*</span></label>
+                    <input type="email" id="name" class="modal-basket-form-window" required>
+                    <label for="phone">Phone<span class="highlited">*</span></label>
+                    <input type="tel" id="phone" class="modal-basket-form-window" required>
+                    <label for="comment">Comment</label>
+                    <input type="text" class="modal-basket-form-comment" id="comment">
+                    <input type="submit" value="Order" class="modal-basket-fotm-button">
+                </form>
             </div>
-
         </div>
+    </div>
     </div>
     <!-- Modal window for basket end -->
     <!-- Bootstrap JS start Maksym -->
