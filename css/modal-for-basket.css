@@ -8,7 +8,7 @@
     width: 100vw;
     top: 0;
     left: 0;
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0,0,0,0.7);
     overflow-y: scroll;  
 }
 .modal-basket{
@@ -18,19 +18,16 @@
     right: 0; 
     margin-left: auto; 
     margin-right: auto; 
-    width: 35%;
+    width: 30%;
     background-color: var(--main-white-color);
-    padding:1.5% 2%;
-    border-radius: 2%;
+    padding:2% 3%;
+    border-radius: 1%;
     font-size: 1.2rem;
     min-width: 360px;
     transition: all 0.4s;
 }
-.modal-basket.deactiveted{
-    top:-100%;
-}
 .modal-basket.active{
-    top:15%;
+    top:10%;
 
 }
 .modal-basket-header{
@@ -96,9 +93,9 @@
 }
 .modal-basket-product-button{
     position:absolute;
-    width: 16px;
-    height: 16px;
-    right:2px;
+    width: 15px;
+    height: 15px;
+    right:3px;
     border:none;
     background-image: url(../img/shoping-basket/quntity-arrow.png) ;
 }
@@ -106,7 +103,7 @@
     top:16px; 
 }
 .modal-basket-product-button.down{
-    bottom:16px;
+    bottom:17px;
     transform: rotate(180deg);
 }
 .modal-basket-total-price{
@@ -131,17 +128,44 @@
     justify-content: space-between;
 }
 .modal-basket-form{
+    display: none;
+}
+.modal-basket-form.active{
     display: flex;
     flex-direction: column;
 }
 .modal-basket-form-window{
     height: 3rem;
     border: none;
-    background-color: var( --divider-gray-color);
-    margin:16px 0;
+    background-color: var(--divider-gray-color);    
 }
 .modal-basket-form-window:focus{
     outline-color: var(--main-red-color);
 }
-
-
+.modal-basket-form-comment{
+    height: 6rem;
+}
+.modal-form-title{
+    font-size:1rem;
+    font-weight: bolder;
+}
+.form-name{
+    margin:16px 0;
+    font-size: 1rem;
+}
+.modal-basket-fotm-button{
+    margin: 40px auto;
+    width: 40%;
+    border:none;
+    background-color: var(--main-red-color);
+    color:var(--main-white-color);
+    height: 60px;
+}
+.modal-basket-form-window::placeholder{
+    font-size: 1rem;
+    padding-left: 1.5rem;
+    color: var(--main-gray-color);
+}
+.modal-basket-form-comment::placeholder{
+    padding-top:1rem
+}

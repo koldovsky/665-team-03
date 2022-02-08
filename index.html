@@ -626,7 +626,7 @@
     </button>
     <!-- Basket end -->
     <!-- Modal window for basket start -->
-    <div class="modal-basket-container">
+    <div class="modal-basket-container ">
         <div class="modal-basket">
             <div class="modal-basket-header">
                 <div class="modal-basket-mane">Shopping cart</div>
@@ -636,43 +636,48 @@
                 <div class="modal-basket-empty-heading">Shopping cart is empty</div>
                 <div class="modal-basket-empty-text">Continue shopping to add product to your cart</div>
             </div>
-            <div class="modal-basket-products">
-                <div class="modal-basket-products-heading">
-                    <div class="modal-basket-products-title">Products</div>
-                    <div class="modal-basket-checkbox">
-                        <input type="radio" id="USD" name="curency">
-                        <label for="USD">USD</label>
-                        <input type="radio" id="UAH" name="curency">
-                        <label for="UAH">UAH</label>
+            <div class="modal-basket-products-wrapper">
+                <div class="modal-basket-products">
+                    <div class="modal-basket-products-heading">
+                        <div class="modal-basket-products-title modal-form-title">Products</div>
+                        <div class="modal-basket-checkbox">
+                            <input type="radio" id="USD" name="curency" checked>
+                            <label for="USD">USD</label>
+                            <input type="radio" id="UAH" name="curency">
+                            <label for="UAH">UAH</label>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="modal-basket-product-container">
-                <div class="modal-basket-product-img-container"><img src="" alt="" class="modal-basket-product-img">1
-                </div>
-                <div class="modal-basket-product-info">
-                    <div class="modal-basket-product-name">1</div>
-                    <div class="modal-basket-product-quantity">
-                        <input class="modal-basket-product-input" type="text">
-                        <button class="modal-basket-product-button up"></button>
-                        <button class=" modal-basket-product-button down"></button>
+                <div class="modal-basket-product-container">
+                    <div class="modal-basket-product-img-container">
+                        <img src="" alt="" class="modal-basket-product-img">1
                     </div>
-                    <div class="modal-basket-product-price">1</div>
+                    <div class="modal-basket-product-info">
+                        <div class="modal-basket-product-name">1</div>
+                        <div class="modal-basket-product-quantity">
+                            <input class="modal-basket-product-input" type="text">
+                            <button class="modal-basket-product-button up"></button>
+                            <button class=" modal-basket-product-button down"></button>
+                        </div>
+                        <div class="modal-basket-product-price">1</div>
+                    </div>
                 </div>
                 <button class="modal-basket-product-delete"></button>
             </div>
             <div class="modal-basket-total-price">1</div>
             <div class="modal-basket-form">
-                <div class="modal-basket-form-title">1</div>
+                <div class="modal-basket-form-title modal-form-title">Place an order</div>
                 <form class="modal-basket-form" action="https://formspree.io/f/xayvekle" method="POST">
-                    <label for="name">Name <span class="highlited">*</span></label>
-                    <input type="text" id="name" class="modal-basket-form-window" required>
-                    <label for="email">Email<span class="highlited">*</span></label>
-                    <input type="email" id="name" class="modal-basket-form-window" required>
-                    <label for="phone">Phone<span class="highlited">*</span></label>
-                    <input type="tel" id="phone" class="modal-basket-form-window" required>
-                    <label for="comment">Comment</label>
-                    <input type="text" class="modal-basket-form-comment" id="comment">
+                    <label class="form-name" for="name">Name <span class="highlighter">*</span></label>
+                    <input type="text" id="name" class="modal-basket-form-window" placeholder="Your name" required>
+                    <label class="form-name" for="email">Email <span class="highlighter">*</span></label>
+                    <input type="email" id="name" class="modal-basket-form-window" placeholder="Your email arddress"
+                        required>
+                    <label class="form-name" for="phone">Phone <span class="highlighter">*</span></label>
+                    <input type="tel" id="phone" class="modal-basket-form-window" placeholder="Your phone" required>
+                    <label class="form-name" for="comment">Comment</label>
+                    <textarea class="modal-basket-form-comment modal-basket-form-window"
+                        placeholder="Your comment"></textarea>
                     <input type="submit" value="Order" class="modal-basket-fotm-button">
                 </form>
             </div>
