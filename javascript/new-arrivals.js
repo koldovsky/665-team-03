@@ -30,8 +30,8 @@
 		const productsContainer = document.querySelector('.new-arrivals_carousel');
 		for (const product of products) {
 			productsContainer.innerHTML += `
-            <div class="new-arrivals-product" id="poduct${product.id}">
-            <a href="#"><img src=${product.imgUrl} alt="${product.title}"></a>
+            <div class="new-arrivals-product" data-id="poduct${product.id}">
+            <a href="#" class ="new-arrivals-product-img"><img src=${product.imgUrl} alt="${product.title}"></a> 
             <div class="product-name">
                 <a href="#">
                     <p class="product-name-text">${product.title}</p>
@@ -41,7 +41,7 @@
                 <p class="product-price-text">${product.price}</p>
             </div>
             <div class="product-button-container">
-                <button class="new-arrivals-button product-button" type="button">Add to Cart</button>
+                <button class="new-arrivals-button product-button" data-id ="button${product.id}" type="button">Add to Cart</button>
             </div>
         </div>`;
 		}

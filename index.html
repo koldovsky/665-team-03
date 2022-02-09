@@ -627,7 +627,7 @@
     <!-- Basket end -->
     <!-- Modal window for basket start -->
     <div class="modal-basket-container ">
-        <div class="modal-basket">
+        <div class="modal-basket ">
             <div class="modal-basket-header">
                 <div class="modal-basket-mane">Shopping cart</div>
                 <button class="modal-basket-close">x</button>
@@ -648,66 +648,50 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal-basket-product-container">
-                    <div class="modal-basket-product-img-container">
-                        <img src="" alt="" class="modal-basket-product-img">1
-                    </div>
-                    <div class="modal-basket-product-info">
-                        <div class="modal-basket-product-name">1</div>
-                        <div class="modal-basket-product-quantity">
-                            <input class="modal-basket-product-input" type="text">
-                            <button class="modal-basket-product-button up"></button>
-                            <button class=" modal-basket-product-button down"></button>
-                        </div>
-                        <div class="modal-basket-product-price">1</div>
-                    </div>
+                <div class="modal-basket-product-list"></div>
+                <div class="modal-basket-total-price">1</div>
+                <div class="modal-basket-form-wraper ">
+                    <div class="modal-basket-form-title modal-form-title">Place an order</div>
+                    <form class="modal-basket-form" action="https://formspree.io/f/xayvekle" method="POST">
+                        <label class="form-name" for="name">Name <span class="highlighter">*</span></label>
+                        <input type="text" id="name" class="modal-basket-form-window" placeholder="Your name" required>
+                        <label class="form-name" for="email">Email <span class="highlighter">*</span></label>
+                        <input type="email" id="name" class="modal-basket-form-window" placeholder="Your email arddress"
+                            required>
+                        <label class="form-name" for="phone">Phone <span class="highlighter">*</span></label>
+                        <input type="tel" id="phone" class="modal-basket-form-window" placeholder="Your phone" required>
+                        <label class="form-name" for="comment">Comment</label>
+                        <textarea class="modal-basket-form-comment modal-basket-form-window"
+                            placeholder="Your comment"></textarea>
+                        <input type="submit" value="Order" data-id="checkout" class="modal-basket-fotm-button">
+                    </form>
                 </div>
-                <button class="modal-basket-product-delete"></button>
-            </div>
-            <div class="modal-basket-total-price">1</div>
-            <div class="modal-basket-form">
-                <div class="modal-basket-form-title modal-form-title">Place an order</div>
-                <form class="modal-basket-form" action="https://formspree.io/f/xayvekle" method="POST">
-                    <label class="form-name" for="name">Name <span class="highlighter">*</span></label>
-                    <input type="text" id="name" class="modal-basket-form-window" placeholder="Your name" required>
-                    <label class="form-name" for="email">Email <span class="highlighter">*</span></label>
-                    <input type="email" id="name" class="modal-basket-form-window" placeholder="Your email arddress"
-                        required>
-                    <label class="form-name" for="phone">Phone <span class="highlighter">*</span></label>
-                    <input type="tel" id="phone" class="modal-basket-form-window" placeholder="Your phone" required>
-                    <label class="form-name" for="comment">Comment</label>
-                    <textarea class="modal-basket-form-comment modal-basket-form-window"
-                        placeholder="Your comment"></textarea>
-                    <input type="submit" value="Order" class="modal-basket-fotm-button">
-                </form>
             </div>
         </div>
-    </div>
-    </div>
-    <!-- Modal window for basket end -->
-    <!-- Bootstrap JS start Maksym -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
-    <!-- Bootstrap JS end -->
-    <!-- Slick slider Chympaiesh Mykola Start -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
-        integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="./javascript/slick-slider/brand-slider.js"></script>
-    <script src="./javascript/new-arrivals.js"></script>
-    <!-- Slick slider Chympaiesh Mykola Start -->
-    <!-- Header clock, burger-menu js Maksym`s start -->
-    <script src="./javascript/burger-menu.js"></script>
-    <!-- Header clock, burger-menu js Maksym`s end -->
-    <!-- CountDown Chympaiesh Mykola Start -->
-    <script src="./javascript/countdown.js"></script>
-    <!-- CountDown Chympaiesh Mykola Start -->
-    <script src="./javascript/shoping-basket.js"></script>
-    <!--Keep-fit animation Natalia Start-->
-    <script src="./javascript/keep-fit.js"></script>
-    <!--Keep-fit animation Natalia End-->
+        <!-- Modal window for basket end -->
+        <!-- Bootstrap JS start Maksym -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+        <!-- Bootstrap JS end -->
+        <!-- Slick slider Chympaiesh Mykola Start -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+            integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="./javascript/slick-slider/brand-slider.js"></script>
+        <script src="./javascript/new-arrivals.js"></script>
+        <!-- Slick slider Chympaiesh Mykola Start -->
+        <!-- Header clock, burger-menu js Maksym`s start -->
+        <script src="./javascript/burger-menu.js"></script>
+        <!-- Header clock, burger-menu js Maksym`s end -->
+        <!-- CountDown Chympaiesh Mykola Start -->
+        <script src="./javascript/countdown.js"></script>
+        <!-- CountDown Chympaiesh Mykola Start -->
+        <script src="./javascript/shoping-basket.js"></script>
+        <!--Keep-fit animation Natalia Start-->
+        <script src="./javascript/keep-fit.js"></script>
+        <!--Keep-fit animation Natalia End-->
 
 </body>
 
