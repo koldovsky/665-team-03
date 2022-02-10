@@ -1,30 +1,11 @@
-(function() {
-	const products = [{
-		id: "1",
-		title: "Asics Jordan 2000",
-		imgUrl: "img/new-arrivals/new-arrivals-asics-jordan.jpg",
-		price: "200,00"
-	}, {
-		id: "2",
-		title: "Puma Textile Running Shoes",
-		imgUrl: "img/new-arrivals/new-arrivals-puma.jpg",
-		price: "65,00"
-	}, {
-		id: "3",
-		title: "Nike Winter Jacket in Blue ",
-		imgUrl: "img/new-arrivals/new-arrivals-nike-winter.jpg",
-		price: "82,00"
-	}, {
-		id: "4",
-		title: "Adidas Black Trainers",
-		imgUrl: "img/new-arrivals/new-arrivals-adidas-black.jpg",
-		price: "60,00"
-	}, {
-		id: "5",
-		title: "Reebok Red Duster",
-		imgUrl: "img/new-arrivals/new-arrivals-reebok-red.jpg",
-	    price: "60,00"
-	}];
+(function() {	
+async function getProducts() {
+	const respronse = await fetch('./javascript/new-product.json')
+	const products = await respronse.json()
+	renderProducts(products)
+}
+
+getProducts()
 
 	function renderProducts(products) {
 		const productsContainer = document.querySelector('.new-arrivals_carousel');
@@ -45,15 +26,16 @@
             </div>
         </div>`;
 		}
+        showCurrentSlide()
 	}
 
-	renderProducts(products);
 
 	let currentSlideIdx = 0;
-    const slides = document.querySelectorAll('.new-arrivals-product');
+    let slides 
 
     function showCurrentSlide() {
-        for(slide of slides){
+        slides = document.querySelectorAll('.new-arrivals-product'); 
+        for(const slide of slides){
             slide.classList.add('hidden-product');
         }
         const currentSlide = slides[currentSlideIdx];
@@ -77,7 +59,7 @@
         }
         
     }
-    showCurrentSlide()
+    
     function showNextSlide() {
         currentSlideIdx = currentSlideIdx + 1 >= slides.length ? 0 : currentSlideIdx + 1;
         showCurrentSlide();

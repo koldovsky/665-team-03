@@ -1,5 +1,4 @@
 (function () {
-    const buttonForAdd = document.querySelectorAll(".product-button")
     const shopingBasket = document.querySelector(".shoping-basket")
     const counterOnBasket = document.querySelector(".shoping-basket-counter")
     const modalWindow = document.querySelector(".modal-basket-container")
@@ -40,10 +39,9 @@
         modalBasket.classList.remove('active')
         if (counter >= 1) { shopingBasket.classList.add('active') }
     }
-    buttonForAdd.forEach(el => el.addEventListener('click', summonBasket))
+
     shopingBasket.addEventListener('click', openBasket)
     modalCosureButton.addEventListener('click', clouseBasket)
-
 
     const carousel = document.querySelector('.new-arrivals_carousel')
     carousel.addEventListener('click', findElement, false);
@@ -53,6 +51,7 @@
     function findElement(e) {
         if (e.target.classList.contains("product-button")) {
         addTOCart(e.target)
+        summonBasket()
     }
     }
 

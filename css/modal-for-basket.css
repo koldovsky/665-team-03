@@ -46,17 +46,20 @@
     display: flex;
     justify-content: space-between;
 }
-.modal-basket-empty{
+.modal-basket-empty,
+.modal-basket-thanks{
     display: none;
 }
-.modal-basket-empty.active{
+.modal-basket-empty.active,
+.modal-basket-thanks.active{
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 150px 0;
 
 }
-.modal-basket-empty-heading{
+.modal-basket-empty-heading
+.modal-basket-thanks.heading{
     font-size: 1.5rem;
     margin:1rem;
 }

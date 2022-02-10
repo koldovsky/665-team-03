@@ -636,6 +636,10 @@
                 <div class="modal-basket-empty-heading">Shopping cart is empty</div>
                 <div class="modal-basket-empty-text">Continue shopping to add product to your cart</div>
             </div>
+            <div class="modal-basket-thanks">
+                <div class="modal-basket-thanks-heading">Than you for order</div>
+                <div class="modal-basket-thanks-text">We will contact you soon</div>
+            </div>
             <div class="modal-basket-products-wrapper ">
                 <div class="modal-basket-products">
                     <div class="modal-basket-products-heading">
@@ -656,16 +660,16 @@
                     <div class="modal-basket-form-title modal-form-title">Place an order</div>
                     <form class="modal-basket-form" action="https://formspree.io/f/xayvekle" method="POST">
                         <label class="form-name" for="name">Name <span class="highlighter">*</span></label>
-                        <input type="text" id="name" class="modal-basket-form-window" placeholder="Your name" required>
+                        <input type="text" name="modal-form" id="name" class="modal-basket-form-window" placeholder="Your name" required>
                         <label class="form-name" for="email">Email <span class="highlighter">*</span></label>
-                        <input type="email" id="name" class="modal-basket-form-window" placeholder="Your email arddress"
+                        <input type="email" name="modal-form" id="name" class="modal-basket-form-window" placeholder="Your email arddress"
                             required>
                         <label class="form-name" for="phone">Phone <span class="highlighter">*</span></label>
-                        <input type="tel" id="phone" class="modal-basket-form-window" placeholder="Your phone" required>
+                        <input type="tel" name="modal-form" id="phone" class="modal-basket-form-window" placeholder="Your phone" required>
                         <label class="form-name" for="comment">Comment</label>
-                        <textarea class="modal-basket-form-comment modal-basket-form-window"
+                        <textarea  name="modal-form" class="modal-basket-form-comment modal-basket-form-window"
                             placeholder="Your comment"></textarea>
-                        <input type="submit" value="Order" data-id="checkout" class="modal-basket-fotm-button">
+                        <input type="submit" name="modal-form" value="Order" data-id="checkout" class="modal-basket-fotm-button">
                     </form>
                 </div>
             </div>
