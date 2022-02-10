@@ -7,17 +7,19 @@
     const bodyElement = document.querySelector("body")
     const modalBasket = document.querySelector(".modal-basket")
     const productsInBasket = document.querySelector(".modal-basket-products-wrapper")
-
-    let counter = 1
+    const emptyBasket = document.querySelector(".modal-basket-empty")
+    let count
+    let counter = 0
 
 
     function summonBasket() {
+        counter++
+        emptyBasket.classList.remove('active')
         shopingBasket.classList.add('active')
         counterOnBasket.classList.add('active')
         shopingBasket.classList.add('animated')
         if (counter > 99) { counterOnBasket.textContent = "99+" }
         else { counterOnBasket.textContent = counter }
-        counter++
         setTimeout(removeAnimation, 100)
     }
     function removeAnimation() {
@@ -36,7 +38,7 @@
         bodyElement.classList.remove('lock')
         modalWindow.classList.remove('active')
         modalBasket.classList.remove('active')
-        if (counter > 1) { shopingBasket.classList.add('active') }
+        if (counter >= 1) { shopingBasket.classList.add('active') }
     }
     buttonForAdd.forEach(el => el.addEventListener('click', summonBasket))
     shopingBasket.addEventListener('click', openBasket)
@@ -46,7 +48,7 @@
     const carousel = document.querySelector('.new-arrivals_carousel')
     carousel.addEventListener('click', findElement, false);
 
-    let id = 100
+
 
     function findElement(e) {
         let targetElement = e.target
@@ -54,58 +56,105 @@
     }
 
     function addTOCart(el) {
-        id++
+        const id = el.parentElement.parentElement.getAttribute('data-id')
         const img = el.parentElement.parentElement.children[0].innerHTML
         const name = el.parentElement.parentElement.children[1].children[0].innerHTML
-        const price = el.parentElement.parentElement.children[2].innerHTML
+        const price = el.closest('.new-arrivals-product').querySelector('.product-price-text').innerText
         const productContainer = document.querySelector(".modal-basket-product-list")
-        const itemCard = `<div class="modal-basket-product-container" id="${id}">
+        const itemIsInCart = productContainer.querySelector(`[data-id="${id}"]`)
+        const itemCard = `<div class="modal-basket-product-container cart-item" data-id="${id}">
         <div class="modal-basket-product-img-container">
             ${img}
         </div>
         <div class="modal-basket-product-info">
             <div class="modal-basket-product-name">${name}</div>
-            <div class="modal-basket-product-quantity">
-                <input class="modal-basket-product-input" type="text">
-                <button class="modal-basket-product-button up"></button>
-                <button class=" modal-basket-product-button down"></button>
+            <div class="items counter-wrapper modal-basket-product-quantity">
+            <div class="items__control modal-basket-product-button down" ><img src="img/shoping-basket/quntity-arrow.png" data-action="minus"></div>
+            <div class="items__current" data-counter>1</div>
+            <div class="items__control modal-basket-product-button up" ><img src="img/shoping-basket/quntity-arrow.png" data-action="plus"></div>
             </div>
-            <div class="modal-basket-product-price">${price}</div>
         </div>
-        <button class="modal-basket-product-delete"></button>
-    </div>
+        <p class="dollar-or-uah">$</p>
+            <div class="modal-basket-product-price">${price}</div>
+        <button class="modal-basket-product-delete" data-delete="delete"></button>
     </div>`
-        if (el.classList.contains("product-button")) { productContainer.innerHTML += itemCard }
-        const productsForCheck = document.querySelectorAll(".modal-basket-product-container")
-        countProducts(productsForCheck)
-    }
 
-    function countProducts(products) {
-        let quantity = 0
-        for (const product of products) {
-            const inputQuantity = product.children[1].children[1].children[0]
-            quantity++ 
-            inputQuantity.value = quantity
-            function updatequan(quan) {
-                inputQuantity.value !== quan ? quan = inputQuantity.value : inputQuantity.value = quan
+        if (el.classList.contains("product-button")) {
+            if (itemIsInCart) {
+                const counterElement = itemIsInCart.querySelector('[data-counter]')
+                counterElement.innerText = parseInt(counterElement.innerText) + 1
             }
-            setInterval(() => {
-                updatequan(quantity)
-            }, 100);
-
+            else { productContainer.innerHTML += itemCard }
+            calcCartPrice()
         }
     }
-    const deleteButton = document.querySelector(".modal-basket-product-delete")
-    // if (productsForCheck.length > 0) {
-    //     
-    //     deleteButton.addEventListener('click', removeElement(id))
-    // }
 
+    modalBasket.addEventListener('click', function (event) {
+        if (event.target.dataset.action === 'plus' || event.target.dataset.action === 'minus') {
+            const counterWrapper = event.target.closest('.counter-wrapper');
+            count = counterWrapper.querySelector('[data-counter]');
+        }
 
+        if (event.target.dataset.action === 'plus') {
+            count.innerText = ++count.innerText;
+            counter++
+            counterOnBasket.textContent = counter
+        }
+        if (event.target.dataset.action === 'minus') {
 
-    function removeElement(num) {
-        let deletedElement = document.getElementById(num)
-        deletedElement.remove()
+            if (parseInt(count.innerText) > 1) {
+                count.innerText = --count.innerText;
+                counter--
+                counterOnBasket.textContent = counter
+                
+            } else if (parseInt(count.innerText) === 1) {
+                event.target.closest('.cart-item').remove();
+                counter--
+                counterOnBasket.textContent = counter
+                toggleCart()
+
+            }
+
+        }
+        calcCartPrice()
+    })
+
+    function deleteFromCart(event) {
+        count = event.target.closest('.cart-item').querySelector('[data-counter]')
+        counter -= count.innerText
+        counterOnBasket.textContent = counter
+        event.target.closest('.cart-item').remove();
+        toggleCart()
+        calcCartPrice()
+    }
+
+    function toggleCart() {
+        const allCards = document.querySelectorAll(".cart-item")
+        console.log(allCards.length)
+        if (allCards.length < 1) {
+            productsInBasket.classList.remove('active')
+            emptyBasket.classList.add('active')
+        }
+    }
+
+    modalBasket.addEventListener('click', function (event) {
+        if (event.target.dataset.delete === 'delete') {
+            deleteFromCart(event)
+        }
+    })
+
+    function calcCartPrice() {
+        const cartWrapper = document.querySelector('.modal-basket-container');
+        const priceElements = cartWrapper.querySelectorAll('.modal-basket-product-price');
+        const totalPriceEl = document.querySelector('.total-price');
+
+        let priceTotal = 0;
+
+        priceElements.forEach(function (item) {
+            const amountEl = item.closest('.cart-item').querySelector('[data-counter]');
+            priceTotal += parseInt(item.innerText) * parseInt(amountEl.innerText);
+        });
+        totalPriceEl.innerText = priceTotal;
     }
 
 

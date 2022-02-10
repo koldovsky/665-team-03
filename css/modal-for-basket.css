@@ -94,33 +94,31 @@
 }
 .modal-basket-product-info{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     font-size: 1rem;
     flex:0.8;
 }
 .modal-basket-product-quantity{
     max-width: 75px;
+    margin:0 30px;
     position:relative;
-}
-.modal-basket-product-input{
-    width:100%;
-
 }
 .modal-basket-product-button{
     position:absolute;
     width: 16px;
     height: 16px;
     right:3px;
+    top:5px;
     border:none;
-    background-image: url(../img/shoping-basket/quntity-arrow.png) ;
 }
 .modal-basket-product-button.up{
-    top:16px; 
+    right:-24px; 
+    transform: rotate(-90deg);
 }
 .modal-basket-product-button.down{
-    bottom:16px;
-    transform: rotate(180deg);
+    left:-24px;
+    transform: rotate(90deg);
 }
 .modal-basket-total-price{
     margin: 2rem 0;
@@ -200,18 +198,28 @@
 .modal-basket-product-img-container img{
     height: 100%;
 }
-.modal-basket-product-info .modal-basket-product-price .product-price-text,
-.modal-basket-product-info .modal-basket-product-name .product-name-text{
+.modal-basket-product-price > .product-price-text,
+.modal-basket-product-info .modal-basket-product-name .product-name-text,
+.dollar-or-uah{
     text-align: center;
     margin:0 10px;
     text-overflow:ellipsis;
-    line-height: 1rem;
 }
-.modal-basket-product-input{
-    height: 34px;
-}
-.modal-basket-product-name{
+.modal-basket-product-name,
+.modal-basket-product-price {
     height: 60px;
     display: flex;
     align-items: center;
 }
+.modal-basket-product-price{
+    display: flex;
+    justify-content: flex-start;
+    width:15%;
+}
+.modal-basket-total-price{
+    display: flex;
+    align-content: center;
+    justify-content: flex-end;
+
+}
+

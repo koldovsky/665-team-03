@@ -3,34 +3,34 @@
 		id: "1",
 		title: "Asics Jordan 2000",
 		imgUrl: "img/new-arrivals/new-arrivals-asics-jordan.jpg",
-		price: "$200,00"
+		price: "200,00"
 	}, {
 		id: "2",
 		title: "Puma Textile Running Shoes",
 		imgUrl: "img/new-arrivals/new-arrivals-puma.jpg",
-		price: "$65,00"
+		price: "65,00"
 	}, {
 		id: "3",
 		title: "Nike Winter Jacket in Blue ",
 		imgUrl: "img/new-arrivals/new-arrivals-nike-winter.jpg",
-		price: "$82,00"
+		price: "82,00"
 	}, {
 		id: "4",
 		title: "Adidas Black Trainers",
 		imgUrl: "img/new-arrivals/new-arrivals-adidas-black.jpg",
-		price: "$60,00"
+		price: "60,00"
 	}, {
 		id: "5",
 		title: "Reebok Red Duster",
 		imgUrl: "img/new-arrivals/new-arrivals-reebok-red.jpg",
-	    price: "$60,00"
+	    price: "60,00"
 	}];
 
 	function renderProducts(products) {
 		const productsContainer = document.querySelector('.new-arrivals_carousel');
 		for (const product of products) {
 			productsContainer.innerHTML += `
-            <div class="new-arrivals-product" data-id="poduct${product.id}">
+            <div class="new-arrivals-product" data-id="${product.id}">
             <a href="#" class ="new-arrivals-product-img"><img src=${product.imgUrl} alt="${product.title}"></a> 
             <div class="product-name">
                 <a href="#">
@@ -38,7 +38,7 @@
                 </a>
             </div>
             <div class="product-price-container">
-                <p class="product-price-text">${product.price}</p>
+            <p class="dollar">$</p><p class="product-price-text">${product.price}</p>
             </div>
             <div class="product-button-container">
                 <button class="new-arrivals-button product-button" data-id ="button${product.id}" type="button">Add to Cart</button>

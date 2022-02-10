@@ -1,14 +1,20 @@
 .blog{
-    height: 621px;
+    height: 50vh;
     width: 94%;
     margin: 50px auto;
     text-align: center;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 .blog__blog-location{
-    height:448px;
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 50%;
     border:2px solid var(--divider-gray-color);
     text-align: center;
-    line-height: 448px;
     font-size: 1.5rem;
     font-weight: bolder;
     width: 100%;
@@ -17,7 +23,7 @@
 }
 .blog__head-text{
     text-align: center;
-    padding:50px;
+    padding:24px;
     font-size: 1.5rem;
 }
 .blog__text-title{

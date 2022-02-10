@@ -232,4 +232,6 @@ min-height: 88px;
         left: 5px;  
         transform:rotate(-90deg);
       } 
-  
+    .product-price-container{
+        display: flex;
+    }
