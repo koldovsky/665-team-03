@@ -75,7 +75,8 @@
             </div>
         </div>
         <p class="dollar-or-uah">$</p>
-            <div class="modal-basket-product-price">${price}</div>
+            <div class="modal-basket-product-price active">${price}</div>
+            <div class="modal-basket-product-price-total"></div>
         <button class="modal-basket-product-delete" data-delete="delete"></button>
     </div>`
 
@@ -83,6 +84,7 @@
             if (itemIsInCart) {
                 const counterElement = itemIsInCart.querySelector('[data-counter]')
                 counterElement.innerText = parseInt(counterElement.innerText) + 1
+                calckEachElement(counterElement)
             }
             else { productContainer.innerHTML += itemCard }
             calcCartPrice()
@@ -99,6 +101,7 @@
             count.innerText = ++count.innerText;
             counter++
             counterOnBasket.textContent = counter
+            calckEachElement(event.target)
         }
         if (event.target.dataset.action === 'minus') {
 
@@ -106,7 +109,8 @@
                 count.innerText = --count.innerText;
                 counter--
                 counterOnBasket.textContent = counter
-                
+                calckEachElement(event.target)
+
             } else if (parseInt(count.innerText) === 1) {
                 event.target.closest('.cart-item').remove();
                 counter--
@@ -152,10 +156,30 @@
 
         priceElements.forEach(function (item) {
             const amountEl = item.closest('.cart-item').querySelector('[data-counter]');
-            priceTotal += parseInt(item.innerText) * parseInt(amountEl.innerText);
+            priceTotal += parseFloat(item.innerText) * parseInt(amountEl.innerText);
         });
+        if (priceTotal % 1 === 0){priceTotal += ',00'}
         totalPriceEl.innerText = priceTotal;
     }
 
+    function calckEachElement(element) {
+        const cardWraper = element.closest('.cart-item')
+        const count = cardWraper.querySelector('[data-counter]')
+        console.log(count.innerText)
+        const priceOfOne = cardWraper.querySelector('.modal-basket-product-price')
+        const totalPriceContainer = cardWraper.querySelector('.modal-basket-product-price-total')
+        let totalPrice = parseInt(count.innerText) * parseFloat(priceOfOne.innerText)
+        if (totalPrice%1 === 0){totalPrice+=',00'}
+        totalPriceContainer.innerText = totalPrice
+        if (parseInt(count.innerText) > 1) {
+            priceOfOne.classList.remove('active')
+            totalPriceContainer.classList.add('active')
+        }
+        else {
+            priceOfOne.classList.add('active')
+            totalPriceContainer.classList.remove('active')
+        }
+        calcCartPrice()
+    }
 
 })()

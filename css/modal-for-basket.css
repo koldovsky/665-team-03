@@ -205,21 +205,33 @@
     margin:0 10px;
     text-overflow:ellipsis;
 }
-.modal-basket-product-name,
-.modal-basket-product-price {
+.modal-basket-product-price{
+    display:none;  
+}
+
+.modal-basket-product-price-total{
+    display:none;
+}
+
+.modal-basket-product-price.active{
+    justify-content: flex-start;
+    width:10%;
+    display: flex;
+    align-content: center;
+}
+.modal-basket-product-price-total.active{
+    display: flex;
+    align-content: center;
+    justify-content: flex-start;
+    width:10%;  
+}
+.modal-basket-product-name{
     height: 60px;
     display: flex;
     align-items: center;
 }
-.modal-basket-product-price{
-    display: flex;
-    justify-content: flex-start;
-    width:15%;
-}
 .modal-basket-total-price{
-    display: flex;
-    align-content: center;
+    display:flex;
     justify-content: flex-end;
-
 }
 
