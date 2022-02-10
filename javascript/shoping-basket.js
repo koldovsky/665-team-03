@@ -51,8 +51,9 @@
 
 
     function findElement(e) {
-        let targetElement = e.target
-        addTOCart(targetElement)
+        if (e.target.classList.contains("product-button")) {
+        addTOCart(e.target)
+    }
     }
 
     function addTOCart(el) {
@@ -80,7 +81,6 @@
         <button class="modal-basket-product-delete" data-delete="delete"></button>
     </div>`
 
-        if (el.classList.contains("product-button")) {
             if (itemIsInCart) {
                 const counterElement = itemIsInCart.querySelector('[data-counter]')
                 counterElement.innerText = parseInt(counterElement.innerText) + 1
@@ -88,7 +88,6 @@
             }
             else { productContainer.innerHTML += itemCard }
             calcCartPrice()
-        }
     }
 
     modalBasket.addEventListener('click', function (event) {

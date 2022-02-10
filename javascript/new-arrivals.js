@@ -31,7 +31,7 @@
 		for (const product of products) {
 			productsContainer.innerHTML += `
             <div class="new-arrivals-product" data-id="${product.id}">
-            <a href="#" class ="new-arrivals-product-img"><img src=${product.imgUrl} alt="${product.title}"></a> 
+            <a href="#" class ="new-arrivals-product-img"><img class="new-arrivals-img" src=${product.imgUrl} alt="${product.title}"></a> 
             <div class="product-name">
                 <a href="#">
                     <p class="product-name-text">${product.title}</p>
@@ -96,4 +96,11 @@
 
     
     window.addEventListener('resize', showCurrentSlide);
+
+    window.addEventListener('click',function(event){
+       if(event.target.classList.contains('new-arrivals-img') || event.target.classList.contains('product-name-text')){
+        event.preventDefault()
+        alert("На жаль сторінки товарів недоступні...");
+       }
+    })
 })();
