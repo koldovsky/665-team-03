@@ -7,19 +7,56 @@
     const modalBasket = document.querySelector(".modal-basket")
     const productsInBasket = document.querySelector(".modal-basket-products-wrapper")
     const emptyBasket = document.querySelector(".modal-basket-empty")
+    const carousel = document.querySelector('.new-arrivals_carousel')
+    const productContainer = document.querySelector(".modal-basket-product-list")
     let count
     let counter = 0
+    renderStorageItems()
+    function renderStorageItems() {
+        if (JSON.parse(localStorage.getItem('items')) !== null) {
+            let no = 0;
+            const itemsFromStorage = JSON.parse(localStorage.getItem('items'))
+            itemsFromStorage.map(data => {
+                no = no + data.no
+            })
+            counter = no;
+            itemsFromStorage.forEach(function (el) {
+                const itemCard = `<div class="modal-basket-product-container cart-item" data-id=${el.id}>
+        <div class="modal-basket-product-img-container">
+		  <img class="new-arrivals-img" src=${el.img} alt=${el.name}>    
+        </div>
+        <div class="modal-basket-product-info">
+            <div class="modal-basket-product-name">${el.name}</div>
+            <div class="items counter-wrapper modal-basket-product-quantity">
+            <div class="items__control modal-basket-product-button down" ><img src="img/shoping-basket/quntity-arrow.png" data-action="minus"></div>
+            <div class="items__current" data-counter>${el.no}</div>
+            <div class="items__control modal-basket-product-button up" ><img src="img/shoping-basket/quntity-arrow.png" data-action="plus"></div>
+            </div>
+        </div>
+        <p class="dollar-or-uah">$</p>
+            <div class="modal-basket-product-price active">${el.price}</div>
+            <div class="modal-basket-product-price-total"></div>
+        <button class="modal-basket-product-delete" data-delete="delete"></button>
+    </div>`
+                productContainer.innerHTML += itemCard
+            })
+        }
+        summonBasket()
+        calckEachElement()
+        calcCartPrice()
+    }
 
 
     function summonBasket() {
-        counter++
-        emptyBasket.classList.remove('active')
-        shopingBasket.classList.add('active')
-        counterOnBasket.classList.add('active')
-        shopingBasket.classList.add('animated')
-        if (counter > 99) { counterOnBasket.textContent = "99+" }
-        else { counterOnBasket.textContent = counter }
-        setTimeout(removeAnimation, 100)
+        if (counter > 0) {
+            emptyBasket.classList.remove('active')
+            shopingBasket.classList.add('active')
+            counterOnBasket.classList.add('active')
+            shopingBasket.classList.add('animated')
+            if (counter > 99) { counterOnBasket.textContent = "99+" }
+            else { counterOnBasket.textContent = counter }
+            setTimeout(removeAnimation, 100)
+        }
     }
     function removeAnimation() {
         shopingBasket.classList.remove('animated')
@@ -43,89 +80,90 @@
     shopingBasket.addEventListener('click', openBasket)
     modalCosureButton.addEventListener('click', clouseBasket)
 
-    const carousel = document.querySelector('.new-arrivals_carousel')
     carousel.addEventListener('click', findElement, false);
 
 
 
     function findElement(e) {
         if (e.target.classList.contains("product-button")) {
-        addTOCart(e.target)
-        summonBasket()
-    }
-    }
+            summonBasket()
+            storeToLocal(e)
 
-    function addTOCart(el) {
-        const id = el.parentElement.parentElement.getAttribute('data-id')
-        const img = el.parentElement.parentElement.children[0].innerHTML
-        const name = el.parentElement.parentElement.children[1].children[0].innerHTML
-        const price = el.closest('.new-arrivals-product').querySelector('.product-price-text').innerText
-        const productContainer = document.querySelector(".modal-basket-product-list")
-        const itemIsInCart = productContainer.querySelector(`[data-id="${id}"]`)
-        const itemCard = `<div class="modal-basket-product-container cart-item" data-id="${id}">
-        <div class="modal-basket-product-img-container">
-            ${img}
-        </div>
-        <div class="modal-basket-product-info">
-            <div class="modal-basket-product-name">${name}</div>
-            <div class="items counter-wrapper modal-basket-product-quantity">
-            <div class="items__control modal-basket-product-button down" ><img src="img/shoping-basket/quntity-arrow.png" data-action="minus"></div>
-            <div class="items__current" data-counter>1</div>
-            <div class="items__control modal-basket-product-button up" ><img src="img/shoping-basket/quntity-arrow.png" data-action="plus"></div>
-            </div>
-        </div>
-        <p class="dollar-or-uah">$</p>
-            <div class="modal-basket-product-price active">${price}</div>
-            <div class="modal-basket-product-price-total"></div>
-        <button class="modal-basket-product-delete" data-delete="delete"></button>
-    </div>`
-
-            if (itemIsInCart) {
-                const counterElement = itemIsInCart.querySelector('[data-counter]')
-                counterElement.innerText = parseInt(counterElement.innerText) + 1
-                calckEachElement(counterElement)
-            }
-            else { productContainer.innerHTML += itemCard }
-            calcCartPrice()
+        }
     }
 
     modalBasket.addEventListener('click', function (event) {
         if (event.target.dataset.action === 'plus' || event.target.dataset.action === 'minus') {
-            const counterWrapper = event.target.closest('.counter-wrapper');
-            count = counterWrapper.querySelector('[data-counter]');
-        }
+            const prductChangeQuantity = event.target.closest('.cart-item')
+            const prductChangeQuantityId = prductChangeQuantity.getAttribute('data-id')
+            count = prductChangeQuantity.querySelector('[data-counter]');
+            const itemsFromStorage = JSON.parse(localStorage.getItem('items'))
+            const productsInCart = []
 
-        if (event.target.dataset.action === 'plus') {
-            count.innerText = ++count.innerText;
-            counter++
-            counterOnBasket.textContent = counter
-            calckEachElement(event.target)
-        }
-        if (event.target.dataset.action === 'minus') {
-
-            if (parseInt(count.innerText) > 1) {
-                count.innerText = --count.innerText;
-                counter--
+            if (event.target.dataset.action === 'plus') {
+                count.innerText = ++count.innerText;
+                counter++
                 counterOnBasket.textContent = counter
+                itemsFromStorage.forEach(function (product) {
+                    if (product.id !== prductChangeQuantityId) {
+                        productsInCart.push(product)
+                    }
+                    else {
+                        product.no++
+                        productsInCart.push(product)
+                    }
+                })
                 calckEachElement(event.target)
-
-            } else if (parseInt(count.innerText) === 1) {
-                event.target.closest('.cart-item').remove();
-                counter--
-                counterOnBasket.textContent = counter
-                toggleCart()
-
             }
+            if (event.target.dataset.action === 'minus') {
 
+                if (parseInt(count.innerText) > 1) {
+                    count.innerText = --count.innerText;
+                    counter--
+                    counterOnBasket.textContent = counter
+                    itemsFromStorage.forEach(function (product) {
+                        if (product.id !== prductChangeQuantityId) {
+                            productsInCart.push(product)
+                        }
+                        else {
+                            product.no--
+                            productsInCart.push(product)
+                        }
+                    })
+                    calckEachElement(event.target)
+
+                } else if (parseInt(count.innerText) === 1) {
+                    itemsFromStorage.forEach(function (product) {
+                        if (product.id !== prductChangeQuantityId) {
+                            productsInCart.push(product)
+                        }
+                    })
+                    event.target.closest('.cart-item').remove();
+                    counter--
+                    counterOnBasket.textContent = counter
+                    toggleCart()
+                }
+            }
+            localStorage.setItem('items', JSON.stringify(productsInCart))
+            calcCartPrice()
         }
-        calcCartPrice()
     })
 
     function deleteFromCart(event) {
-        count = event.target.closest('.cart-item').querySelector('[data-counter]')
+        const deleteProduct = event.target.closest('.cart-item')
+        const deleteProductId = deleteProduct.getAttribute('data-id')
+        const itemsFromStorage = JSON.parse(localStorage.getItem('items'))
+        const productsInCart = []
+        itemsFromStorage.forEach(function (product) {
+            if (product.id !== deleteProductId) {
+                productsInCart.push(product)
+            }
+        })
+        localStorage.setItem('items', JSON.stringify(productsInCart));
+        count = deleteProduct.querySelector('[data-counter]')
         counter -= count.innerText
         counterOnBasket.textContent = counter
-        event.target.closest('.cart-item').remove();
+        deleteProduct.remove();
         toggleCart()
         calcCartPrice()
     }
@@ -156,28 +194,65 @@
             const amountEl = item.closest('.cart-item').querySelector('[data-counter]');
             priceTotal += parseFloat(item.innerText) * parseInt(amountEl.innerText);
         });
-        if (priceTotal % 1 === 0){priceTotal += ',00'}
+        if (priceTotal % 1 === 0) { priceTotal += ',00' }
         totalPriceEl.innerText = priceTotal;
     }
 
-    function calckEachElement(element) {
-        const cardWraper = element.closest('.cart-item')
-        const count = cardWraper.querySelector('[data-counter]')
-        console.log(count.innerText)
-        const priceOfOne = cardWraper.querySelector('.modal-basket-product-price')
-        const totalPriceContainer = cardWraper.querySelector('.modal-basket-product-price-total')
-        let totalPrice = parseInt(count.innerText) * parseFloat(priceOfOne.innerText)
-        if (totalPrice%1 === 0){totalPrice+=',00'}
-        totalPriceContainer.innerText = totalPrice
-        if (parseInt(count.innerText) > 1) {
-            priceOfOne.classList.remove('active')
-            totalPriceContainer.classList.add('active')
+    function calckEachElement() {
+        const productsInCart = document.querySelectorAll('.cart-item')
+        productsInCart.forEach(function (product) {
+            const count = product.querySelector('[data-counter]')
+            const priceOfOne = product.querySelector('.modal-basket-product-price')
+            const totalPriceContainer = product.querySelector('.modal-basket-product-price-total')
+            let totalPrice = parseInt(count.innerText) * parseFloat(priceOfOne.innerText)
+            if (totalPrice % 1 === 0) { totalPrice += ',00' }
+            totalPriceContainer.innerText = totalPrice
+            if (parseInt(count.innerText) > 1) {
+                priceOfOne.classList.remove('active')
+                totalPriceContainer.classList.add('active')
+            }
+            else {
+                priceOfOne.classList.add('active')
+                totalPriceContainer.classList.remove('active')
+            }
+            calcCartPrice()
+        })
+    }
+
+    let items = [];
+    function storeToLocal(e) {
+        if (typeof (Storage) !== 'undefined') {
+            let item = {
+                id: e.target.parentElement.parentElement.getAttribute('data-id'),
+                img: e.target.closest('.new-arrivals-product').querySelector('.new-arrivals-img').getAttribute('src'),
+                name: e.target.closest('.new-arrivals-product').querySelector('.product-name-text').textContent,
+                price: e.target.closest('.new-arrivals-product').querySelector('.product-price-text').textContent,
+                no: 1
+            };
+            console.log(item)
+            if (JSON.parse(localStorage.getItem('items')) === null) {
+                items.push(item);
+                localStorage.setItem("items", JSON.stringify(items));
+                window.location.reload();
+            } else {
+                const localItems = JSON.parse(localStorage.getItem("items"));
+                localItems.map(data => {
+                    if (item.id == data.id) {
+                        item.no = data.no + 1;
+                    } else {
+                        items.push(data);
+                    }
+                });
+                items.push(item);
+                localStorage.setItem('items', JSON.stringify(items));
+                window.location.reload();
+            }
         }
         else {
-            priceOfOne.classList.add('active')
-            totalPriceContainer.classList.remove('active')
+            alert('local storage is not working on your browser');
         }
-        calcCartPrice()
     }
+
+
 
 })()
