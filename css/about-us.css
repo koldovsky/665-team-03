@@ -60,6 +60,7 @@
     display: flex;
     margin-top: 30px;
     padding: 0;
+    list-style-type: none;
 }
 .about-us__wrapper .list__icons li {
     margin-right: 7.5px;
