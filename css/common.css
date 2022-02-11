@@ -80,3 +80,7 @@ header.section_header > p {
     max-width: 1200px;
     margin: auto;
 }
+
+.text-brand-color, .dot--color {
+    color: var(--main-red-color);
+}

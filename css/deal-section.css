@@ -178,12 +178,31 @@
     border: 1px solid var(--countdown-border);
     border-radius: 5px;
     cursor: pointer;
-    transition: all 1s ease;
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: transparent;
+    background-image: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255,255,255,0.3) 50%,
+    transparent 100%
+    );
+    background-repeat: no-repeat;
+    background-position: -100vw;
+    animation: shine 2s infinite;
+}
+
+@keyframes shine {
+    0% {
+      background-position: -100vw;    
+    }
+    100% {
+      background-position: 100vw;   
+    }
 }
 
 .countdown__item:hover {
-    background-color: #fff;
-    color: black;
+    /* background-color: var(--divider-gray-color); */
+    /* color: black; */
     transform: scale(1.1);
 }
 
@@ -224,7 +243,6 @@
 .countdown__separator {
     flex-grow: 1;
 }
-
 
 /* Mobile-first */
 @media (min-width:769px) {
