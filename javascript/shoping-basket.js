@@ -305,10 +305,8 @@
                 usd = localStorage.getItem('currency')
                 document.getElementById('USD').checked = true
                 productsInCart.forEach(product => {
-                    const price = product.querySelector('.modal-basket-product-price')
-                    const curencyTag = product.querySelector('.dollar-or-uah')git
+                    const curencyTag = product.querySelector('.dollar-or-uah')
                     curencyTag.textContent = '$'
-                    calckEachElement()
                 })
 
             }
