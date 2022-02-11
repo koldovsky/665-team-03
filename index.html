@@ -392,38 +392,30 @@
 
     <!--Nadia block About Us start-->
     <section id="about-us" class="about-us" style="background-color:#222323">
-        <div class="about-us__img">
-            <img class="about-us__img-two-men" src="img/about-us/two-men.webp" alt="two_men">
-        </div>
-        <div class="about-us__wrapper">
-            <div class="about-us__text">
-                <h2 class="about-us__text-head">ABOUT US<span class="dot--color">.</span></h2>
-                <div class="divider">
-
+        <div class="about-us__container">
+            <div class="about-us__desktop">
+                <div class="about-us__img">
+                    <img class="about-us__img-two-men" src="img/about-us/two-men.webp" alt="two_men">
                 </div>
-                <p class="about-us__text-content">
-                    Workout is an American fitness store created by fitness geeks for those who love sport and try
-                    to
-                    keep fit.
-                </p>
-                <p class="about-us__text-content2">
-                    At Workout, we know that great results do not come from standing still. We all need to move,
-                    push
-                    boundaries,
-                    and achieve better results every day. The mission of our shop is to support you in this.
-                </p>
-                <br>
-                <p class="about-us__text-content2">We're sure that everyday fitness can
-                    change your lives and bodies forever. And we keep selling
-                    comfortable and
-                    high-tech clothes and shoes for your outstanding results.
-                </p>
+                <div class="about-us__wrapper">
+                    <div class="about-us__text">
+                        <h2 class="about-us__text-head">ABOUT US<span class="dot--color">.</span></h2>
+                        <div class="divider">
+
+                        </div>
+                        <p>Workout is an American fitness store created by fitness geeks for those who love sport and try to keep fit.</p>
+                        <p>
+                            <span>At Workout, we know that great results do not come from standing still. We all need to move, push boundaries, and achieve better results every day. The mission of our shop is to support you in this.</span>
+                            <span>We're sure that everyday fitness can change your lives and bodies forever. And we keep selling comfortable and high-tech clothes and shoes for your outstanding results.</span>
+                        </p>
+                    </div>
+                    <ul class="list__icons">
+                        <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                    </ul>
+                </div>
             </div>
-            <nav class="about-us__nav-icons">
-                <a href=""><i class="fab fa-facebook"></i></a>
-                <a href=""><i class="fab fa-instagram"></i></a>
-                <a href=""><i class="fab fa-youtube"></i></a>
-            </nav>
         </div>
     </section>
     <!--Nadia block About Us end-->
@@ -660,16 +652,19 @@
                     <div class="modal-basket-form-title modal-form-title">Place an order</div>
                     <form class="modal-basket-form" action="https://formspree.io/f/xayvekle" method="POST">
                         <label class="form-name" for="name">Name <span class="highlighter">*</span></label>
-                        <input type="text" name="modal-form" id="name" class="modal-basket-form-window" placeholder="Your name" required>
+                        <input type="text" name="modal-form" id="name" class="modal-basket-form-window"
+                            placeholder="Your name" required>
                         <label class="form-name" for="email">Email <span class="highlighter">*</span></label>
-                        <input type="email" name="modal-form" id="name" class="modal-basket-form-window" placeholder="Your email arddress"
-                            required>
+                        <input type="email" name="modal-form" id="name" class="modal-basket-form-window"
+                            placeholder="Your email arddress" required>
                         <label class="form-name" for="phone">Phone <span class="highlighter">*</span></label>
-                        <input type="tel" name="modal-form" id="phone" class="modal-basket-form-window" placeholder="Your phone" required>
+                        <input type="tel" name="modal-form" id="phone" class="modal-basket-form-window"
+                            placeholder="Your phone" required>
                         <label class="form-name" for="comment">Comment</label>
-                        <textarea  name="modal-form" class="modal-basket-form-comment modal-basket-form-window"
+                        <textarea name="modal-form" class="modal-basket-form-comment modal-basket-form-window"
                             placeholder="Your comment"></textarea>
-                        <input type="submit" name="modal-form" value="Order" data-id="checkout" class="modal-basket-fotm-button">
+                        <input type="submit" name="modal-form" value="Order" data-id="checkout"
+                            class="modal-basket-fotm-button">
                     </form>
                 </div>
             </div>
