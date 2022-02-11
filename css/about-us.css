@@ -3,6 +3,9 @@
 * {
     box-sizing: border-box;
 }
+.about-us {
+    background-color: var(--main-black-color);
+}
 .about-us .about-us__img img {
     width: 100%;
     min-height: 200px;
@@ -56,6 +59,7 @@
 .about-us__wrapper .list__icons {
     display: flex;
     margin-top: 30px;
+    padding: 0;
 }
 .about-us__wrapper .list__icons li {
     margin-right: 7.5px;
