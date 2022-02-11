@@ -11,7 +11,9 @@
     const productContainer = document.querySelector(".modal-basket-product-list")
     let count
     let counter = 0
+
     renderStorageItems()
+
     function renderStorageItems() {
         if (JSON.parse(localStorage.getItem('items')) !== null) {
             let no = 0;
@@ -58,6 +60,7 @@
             setTimeout(removeAnimation, 100)
         }
     }
+
     function removeAnimation() {
         shopingBasket.classList.remove('animated')
     }
@@ -77,12 +80,15 @@
         if (counter >= 1) { shopingBasket.classList.add('active') }
     }
 
+    // modalWindow.addEventListener('click', function (event) {
+    //     if (event.target.classList.contains('modal-basket-container')) {
+    //         clouseBasket()
+    //     }
+    // })
+
     shopingBasket.addEventListener('click', openBasket)
     modalCosureButton.addEventListener('click', clouseBasket)
-
     carousel.addEventListener('click', findElement, false);
-
-
 
     function findElement(e) {
         if (e.target.classList.contains("product-button")) {
@@ -99,7 +105,6 @@
             count = prductChangeQuantity.querySelector('[data-counter]');
             const itemsFromStorage = JSON.parse(localStorage.getItem('items'))
             const productsInCart = []
-
             if (event.target.dataset.action === 'plus') {
                 count.innerText = ++count.innerText;
                 counter++
@@ -192,7 +197,7 @@
 
         priceElements.forEach(function (item) {
             const amountEl = item.closest('.cart-item').querySelector('[data-counter]');
-            priceTotal += parseFloat(item.innerText) * parseInt(amountEl.innerText);
+            priceTotal += parseInt(item.innerText) * parseInt(amountEl.innerText);
         });
         if (priceTotal % 1 === 0) { priceTotal += ',00' }
         totalPriceEl.innerText = priceTotal;
@@ -204,8 +209,8 @@
             const count = product.querySelector('[data-counter]')
             const priceOfOne = product.querySelector('.modal-basket-product-price')
             const totalPriceContainer = product.querySelector('.modal-basket-product-price-total')
-            let totalPrice = parseInt(count.innerText) * parseFloat(priceOfOne.innerText)
-            if (totalPrice % 1 === 0) { totalPrice += ',00' }
+            let totalPrice = parseInt(count.innerText) * parseInt(priceOfOne.innerText)
+            if (totalPrice % 1 === 0) { totalPrice = `${totalPrice},00` }
             totalPriceContainer.innerText = totalPrice
             if (parseInt(count.innerText) > 1) {
                 priceOfOne.classList.remove('active')
@@ -253,6 +258,102 @@
         }
     }
 
+    const cartForm = document.querySelector('.modal-basket-form')
+    const userName = document.querySelector('.cart-usermane')
+    const greetengText = document.querySelector('.modal-basket-thanks')
+    const thankYouUser = document.querySelector('.modal-basket-thanks-heading')
+    const valueInputs = document.querySelectorAll('.modal-form')
 
+    cartForm.addEventListener('submit', function (event) {
+        event.preventDefault()
+        thankYouUser.textContent = `Thank you ${userName.value}`
+        productsInBasket.classList.remove('active')
+        greetengText.classList.add('active')
+        localStorage.setItem('items', JSON.stringify([]))
+        valueInputs.forEach(input => input.value = '')
+        counter = 0
+        setTimeout(clouseBasket, 3000);
+        setTimeout(() => greetengText.classList.remove('active'), 3000)
 
+    })
+    
+    async function curencyRate() {
+        const response = await fetch('https://bank.gov.ua/NBUStatService/v1/statdirectory/exchangenew?json')
+        const curency = await response.json()
+        const usdRate = parseInt(curency.filter(el => el.cc === 'USD')[0].rate)
+        localStorage.setItem('rate', usdRate)      
+    }
+    let usd
+    curencyRate()
+
+    getCurrencyFromStorage(localStorage.getItem('rate'))
+    function getCurrencyFromStorage(usdRate) {
+        const productsInCart = document.querySelectorAll('.cart-item')
+        if (localStorage.getItem('currency') !== null) {
+            if (localStorage.getItem('currency') === 'false') {
+                usd = localStorage.getItem('currency')
+                document.getElementById('UAH').checked = true
+                productsInCart.forEach(product => {
+                    const price = product.querySelector('.modal-basket-product-price')
+                    const curencyTag = product.querySelector('.dollar-or-uah')
+                    price.textContent = `${parseInt(price.textContent) * usdRate},00`
+                    curencyTag.textContent = '₴'
+                    calckEachElement()
+                })
+            }
+            if (localStorage.getItem('currency') === 'true') {
+                usd = localStorage.getItem('currency')
+                document.getElementById('USD').checked = true
+                productsInCart.forEach(product => {
+                    const price = product.querySelector('.modal-basket-product-price')
+                    const curencyTag = product.querySelector('.dollar-or-uah')
+                    curencyTag.textContent = '$'
+                    calckEachElement()
+                })
+
+            }
+        }
+        else {
+            usd = 'true'
+            document.getElementById('USD').checked = true
+        }
+    }
+
+    function exchange(usdRate) {
+        const productsInCart = document.querySelectorAll('.cart-item')
+        if ( usd === 'false') {
+            productsInCart.forEach(product => {
+                const price = product.querySelector('.modal-basket-product-price')
+                const curencyTag = product.querySelector('.dollar-or-uah')
+                price.textContent = `${parseInt(price.textContent) / usdRate},00`
+                curencyTag.textContent = '$'
+                usd = 'true'  
+                localStorage.setItem('currency', 'true')
+                calckEachElement()
+            })
+        }
+        else if (usd === 'true') {
+            productsInCart.forEach(product => {
+                const price = product.querySelector('.modal-basket-product-price')
+                const curencyTag = product.querySelector('.dollar-or-uah')
+                price.textContent = `${parseInt(price.textContent) * usdRate},00`
+                curencyTag.textContent = '₴' 
+                usd = 'false'
+                localStorage.setItem('currency', 'false')
+                calckEachElement()
+            })
+        }
+        calcCartPrice()
+    }
+
+    modalBasket.addEventListener('click', function (event) {
+        console.log(usd)
+        if (event.target.classList.contains('curencytoggle')) {
+            if(event.target.classList.contains('USD') && usd === 'false'){
+                exchange(parseInt(localStorage.getItem('rate'))) 
+            }
+            if(event.target.classList.contains('UAH') && usd === 'true')
+            {exchange(parseInt(localStorage.getItem('rate'))) }
+        }
+    })
 })()

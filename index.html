@@ -629,7 +629,7 @@
                 <div class="modal-basket-empty-text">Continue shopping to add product to your cart</div>
             </div>
             <div class="modal-basket-thanks">
-                <div class="modal-basket-thanks-heading">Than you for order</div>
+                <div class="modal-basket-thanks-heading"></div>
                 <div class="modal-basket-thanks-text">We will contact you soon</div>
             </div>
             <div class="modal-basket-products-wrapper ">
@@ -637,9 +637,9 @@
                     <div class="modal-basket-products-heading">
                         <div class="modal-basket-products-title modal-form-title">Products</div>
                         <div class="modal-basket-checkbox">
-                            <input type="radio" id="USD" name="curency" checked>
+                            <input class = "curencytoggle USD" type="radio" id="USD" name="curency">
                             <label for="USD">USD</label>
-                            <input type="radio" id="UAH" name="curency">
+                            <input class = "curencytoggle UAH" type="radio" id="UAH" name="curency">
                             <label for="UAH">UAH</label>
                         </div>
                     </div>
@@ -652,7 +652,7 @@
                     <div class="modal-basket-form-title modal-form-title">Place an order</div>
                     <form class="modal-basket-form" action="https://formspree.io/f/xayvekle" method="POST">
                         <label class="form-name" for="name">Name <span class="highlighter">*</span></label>
-                        <input type="text" name="modal-form" id="name" class="modal-basket-form-window"
+                        <input type="text" name="modal-form" id="name" class="modal-basket-form-window cart-usermane"
                             placeholder="Your name" required>
                         <label class="form-name" for="email">Email <span class="highlighter">*</span></label>
                         <input type="email" name="modal-form" id="name" class="modal-basket-form-window"
