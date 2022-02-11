@@ -306,7 +306,7 @@
                 document.getElementById('USD').checked = true
                 productsInCart.forEach(product => {
                     const price = product.querySelector('.modal-basket-product-price')
-                    const curencyTag = product.querySelector('.dollar-or-uah')
+                    const curencyTag = product.querySelector('.dollar-or-uah')git
                     curencyTag.textContent = '$'
                     calckEachElement()
                 })
