@@ -21,7 +21,7 @@
     width: 80%;
     background-color: var(--main-white-color);
     padding:2% 3%;
-    border-radius: 1%;
+    border-radius: 10px;
     font-size: 1.2rem;
     min-width: 360px;
     transition: all 0.4s;
@@ -114,6 +114,7 @@
     right:3px;
     top:5px;
     border:none;
+    cursor: pointer;
 }
 .modal-basket-product-button.up{
     right:-24px; 
@@ -208,6 +209,10 @@
     margin:0 5px;
     text-overflow:ellipsis;
 }
+.dollar-or-uah-total{
+    margin: 0 10px;
+}
+
 .modal-basket-product-price{
     display:none;  
 }
@@ -239,4 +244,39 @@
 
 .modal-basket-empty-text{
     text-align: center;
+}
+#USD,
+#UAH{
+    display:none;
+}
+.modal-basket-checkbox{
+    background-color: var(--main-gray-color);
+    color: var(--main-white-color);
+    display:flex;
+    align-items: center;
+    border-radius:5px;
+}
+.modal-basket-checkbox label{
+    padding:5px;
+}
+.modal-basket-checkbox label#uahl:hover{
+    background-color: var(--main-red-color);
+    border-radius: 0 5px 5px 0;
+}
+.modal-basket-checkbox label#usdl:hover{
+    background-color: var(--main-red-color);
+    border-radius: 5px 0 0 5px;
+}
+.modal-basket-checkbox input[type="radio"]#UAH:checked+label {
+    background-color: var(--main-red-color);
+    border:none;
+    border-radius: 0 5px 5px 0;
+}
+.modal-basket-checkbox input[type="radio"]#USD:checked+label {
+    background-color: var(--main-red-color);
+    border:none;
+    border-radius: 5px 0 0 5px;
+}
+.modal-basket-products-wrapper .new-arrivals-img{
+    cursor:pointer;
 }

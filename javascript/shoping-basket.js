@@ -80,11 +80,11 @@
         if (counter >= 1) { shopingBasket.classList.add('active') }
     }
 
-    // modalWindow.addEventListener('click', function (event) {
-    //     if (event.target.classList.contains('modal-basket-container')) {
-    //         clouseBasket()
-    //     }
-    // })
+    modalWindow.addEventListener('click', function (event) {
+        if (event.target.classList.contains('modal-basket-container')) {
+            clouseBasket()
+        }
+    })
 
     shopingBasket.addEventListener('click', openBasket)
     modalCosureButton.addEventListener('click', clouseBasket)
@@ -179,6 +179,7 @@
         if (allCards.length < 1) {
             productsInBasket.classList.remove('active')
             emptyBasket.classList.add('active')
+            setTimeout(clouseBasket, 3000)
         }
     }
 
@@ -276,18 +277,19 @@
         setTimeout(() => greetengText.classList.remove('active'), 3000)
 
     })
-    
+
     async function curencyRate() {
         const response = await fetch('https://bank.gov.ua/NBUStatService/v1/statdirectory/exchangenew?json')
         const curency = await response.json()
         const usdRate = parseInt(curency.filter(el => el.cc === 'USD')[0].rate)
-        localStorage.setItem('rate', usdRate)      
+        localStorage.setItem('rate', usdRate)
     }
     let usd
     curencyRate()
 
     getCurrencyFromStorage(localStorage.getItem('rate'))
     function getCurrencyFromStorage(usdRate) {
+        const totalCurrencyTag = document.querySelector('.dollar-or-uah-total')
         const productsInCart = document.querySelectorAll('.cart-item')
         if (localStorage.getItem('currency') !== null) {
             if (localStorage.getItem('currency') === 'false') {
@@ -300,6 +302,7 @@
                     curencyTag.textContent = '₴'
                     calckEachElement()
                 })
+                totalCurrencyTag.textContent = "₴"
             }
             if (localStorage.getItem('currency') === 'true') {
                 usd = localStorage.getItem('currency')
@@ -308,7 +311,7 @@
                     const curencyTag = product.querySelector('.dollar-or-uah')
                     curencyTag.textContent = '$'
                 })
-
+                totalCurrencyTag.textContent = "$"
             }
         }
         else {
@@ -319,13 +322,15 @@
 
     function exchange(usdRate) {
         const productsInCart = document.querySelectorAll('.cart-item')
-        if ( usd === 'false') {
+        const totalCurrencyTag = document.querySelector('.dollar-or-uah-total')
+        if (usd === 'false') {
             productsInCart.forEach(product => {
                 const price = product.querySelector('.modal-basket-product-price')
                 const curencyTag = product.querySelector('.dollar-or-uah')
                 price.textContent = `${parseInt(price.textContent) / usdRate},00`
                 curencyTag.textContent = '$'
-                usd = 'true'  
+                totalCurrencyTag.textContent = "$"
+                usd = 'true'
                 localStorage.setItem('currency', 'true')
                 calckEachElement()
             })
@@ -335,7 +340,8 @@
                 const price = product.querySelector('.modal-basket-product-price')
                 const curencyTag = product.querySelector('.dollar-or-uah')
                 price.textContent = `${parseInt(price.textContent) * usdRate},00`
-                curencyTag.textContent = '₴' 
+                curencyTag.textContent = '₴'
+                totalCurrencyTag.textContent = "₴"
                 usd = 'false'
                 localStorage.setItem('currency', 'false')
                 calckEachElement()
@@ -347,11 +353,10 @@
     modalBasket.addEventListener('click', function (event) {
         console.log(usd)
         if (event.target.classList.contains('curencytoggle')) {
-            if(event.target.classList.contains('USD') && usd === 'false'){
-                exchange(parseInt(localStorage.getItem('rate'))) 
+            if (event.target.classList.contains('USD') && usd === 'false') {
+                exchange(parseInt(localStorage.getItem('rate')))
             }
-            if(event.target.classList.contains('UAH') && usd === 'true')
-            {exchange(parseInt(localStorage.getItem('rate'))) }
+            if (event.target.classList.contains('UAH') && usd === 'true') { exchange(parseInt(localStorage.getItem('rate'))) }
         }
     })
 })()

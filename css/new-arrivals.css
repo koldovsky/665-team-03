@@ -7,7 +7,7 @@
     color:var(--main-black-color);
     box-sizing:border-box;
     max-width: 1200px; 
-    min-height: 40vh;
+    min-height: 500px;
 }
 .new-arrivals_text{
     padding: 0 32px;
@@ -234,4 +234,7 @@ min-height: 88px;
       } 
     .product-price-container{
         display: flex;
+    }
+    .dollar{
+        margin-right:5px;
     }
