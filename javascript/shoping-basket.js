@@ -7,7 +7,6 @@
     const modalBasket = document.querySelector(".modal-basket")
     const productsInBasket = document.querySelector(".modal-basket-products-wrapper")
     const emptyBasket = document.querySelector(".modal-basket-empty")
-    const carousel = document.querySelector('.new-arrivals_carousel')
     const productContainer = document.querySelector(".modal-basket-product-list")
     let count
     let counter = 0
@@ -88,7 +87,7 @@
 
     shopingBasket.addEventListener('click', openBasket)
     modalCosureButton.addEventListener('click', clouseBasket)
-    carousel.addEventListener('click', findElement, false);
+    window.addEventListener('click', findElement, false);
 
     function findElement(e) {
         if (e.target.classList.contains("product-button")) {
@@ -359,4 +358,37 @@
             if (event.target.classList.contains('UAH') && usd === 'true') { exchange(parseInt(localStorage.getItem('rate'))) }
         }
     })
+
+    window.addEventListener('click', function (e) {
+		if (e.target.classList.contains('product-info-button-add')) {
+			let item = {
+				id: e.target.closest('.new-arrivals-product').getAttribute('data-id'),
+				img: e.target.closest('.new-arrivals-product').querySelector('.new-arrivals-img').getAttribute('src'),
+				name: e.target.closest('.new-arrivals-product').querySelector('.product-name-text').textContent,
+				price: e.target.closest('.new-arrivals-product').querySelector('.product-price-text').textContent,
+				no: parseInt(e.target.closest('.new-arrivals-product').querySelector('.product-info-current-count').textContent)
+			}
+			if (JSON.parse(localStorage.getItem('items')) === null) {
+				items.push(item);
+				localStorage.setItem("items", JSON.stringify(items));
+				window.location.reload();
+			} else {
+				const localItems = JSON.parse(localStorage.getItem("items"));
+				localItems.map(data => {
+					if (item.id === data.id) {
+						console.log(data)
+						item.no = parseInt(data.no) + parseInt(e.target.closest('.new-arrivals-product').querySelector('.product-info-current-count').textContent)
+					} else {
+						items.push(data);
+					}
+				});
+				items.push(item);
+				localStorage.setItem('items', JSON.stringify(items));
+				window.location.reload();
+			}
+			calckEachElement()
+			calcCartPrice()
+		}
+	})
+
 })()

@@ -6,15 +6,14 @@
     }
 
     getProducts()
-
+    const productsContainer = document.querySelector('.new-arrivals_carousel');
     function renderProducts(products) {
-        const productsContainer = document.querySelector('.new-arrivals_carousel');
         for (const product of products) {
             productsContainer.innerHTML += `
 					<div class="new-arrivals-product" data-id="${product.id}">
-					<a href="#" class ="new-arrivals-product-img"><img class="new-arrivals-img" src=${product.imgUrl} alt="${product.title}"></a> 
+					<a href="product-info.html" class ="new-arrivals-product-img"><img class="new-arrivals-img" src=${product.imgUrl} alt="${product.title}"></a> 
 					<div class="product-name">
-						 <a href="#">
+						 <a href="product-info.html">
 							  <p class="product-name-text">${product.title}</p>
 						 </a>
 					</div>
@@ -57,16 +56,14 @@
                     slides[fourthSlideIdx].classList.remove('hidden-product', 'second-slide', 'third-slide', 'first-slide');
                     slides[fourthSlideIdx].classList.add('fourth-slide');
                 }
-
             }
         }
-
     }
-    
+
     function showNextSlide() {
         console.log(slides)
-        currentSlideIdx = currentSlideIdx + 1 >= slides.length ? 0 : currentSlideIdx + 1; 
-        localStorage.setItem('count', currentSlideIdx>4?0:currentSlideIdx)
+        currentSlideIdx = currentSlideIdx + 1 >= slides.length ? 0 : currentSlideIdx + 1;
+        localStorage.setItem('count', currentSlideIdx > 4 ? 0 : currentSlideIdx)
         showCurrentSlide();
     }
 
@@ -82,13 +79,19 @@
     document.querySelector('.new-arrivals_carousel_arrow-left')
         .addEventListener('click', showPrevSlide);
 
-
     window.addEventListener('resize', showCurrentSlide);
 
-    window.addEventListener('click', function (event) {
-        if (event.target.classList.contains('new-arrivals-img') || event.target.classList.contains('product-name-text')) {
-            event.preventDefault()
-            alert("На жаль сторінки товарів недоступні...");
+    productsContainer.addEventListener('click', function (e) {
+
+        if (e.target.classList.contains('new-arrivals-img') || e.target.classList.contains('product-name-text')) {
+            let product = {
+                id: e.target.closest('.new-arrivals-product').getAttribute('data-id'),
+                img: e.target.closest('.new-arrivals-product').querySelector('.new-arrivals-img').getAttribute('src'),
+                name: e.target.closest('.new-arrivals-product').querySelector('.product-name-text').textContent,
+                price: e.target.closest('.new-arrivals-product').querySelector('.product-price-text').textContent,
+            }
+            localStorage.setItem("product", JSON.stringify(product))
         }
     })
+
 })();

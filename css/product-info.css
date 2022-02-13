@@ -1,0 +1,119 @@
+.main{
+min-height: 51vh;
+display:flex;
+flex-direction: column;
+max-width: 1200px;
+margin: 0 auto 25% auto;
+}
+@media screen and (min-width:768px) {
+	.main{
+		flex-direction: row;
+	}
+	.pruduct-info-images{
+		width: 50%;
+	}
+	.product-name-and-discription{
+		width: 50%;
+	}
+	.product-info-counter{
+		width: 15%;
+	}
+}
+.product-info-img-container{
+	width:75%;
+	height: auto;
+	margin: 15% auto
+}
+.product-info-img-mini-container{
+	align-self: flex-start;
+	margin:2rem;
+	width:20%;
+	height: auto;
+}
+
+.product-name-container{
+	margin:2rem;
+	padding:2rem 0 ;
+	align-self: flex-start;
+}
+.product-in-stock{
+	color:rgb(11, 170, 11);
+}
+.product-name-container h1{
+	font-family: 'Bebas Neue', cursive;
+	font-size: 2.3rem;
+}
+.poroduct-info-price{
+	margin-top:2rem;
+	font-size: 1.5rem;
+	font-weight: bold;
+	color:var(--main-gray-color)
+}
+.product-info-counter-container{
+	margin:2rem;
+	display:flex;
+	height: 3rem;
+	align-items: center;
+}
+.product-info-counter{
+	width:20%;
+	margin-right:1rem;
+	position:relative;
+	height: 100%;
+	display:flex;
+	align-items: center;
+}
+.product-info-count-arrow{
+	height: 1rem;
+	width: 1rem;
+	position:absolute;
+	right: 0;
+}
+.product-info-count-arrow.up{
+	transform: rotate(180deg);
+	top:0.25rem;
+}
+.product-info-count-arrow.down{
+	bottom: 0.25rem;
+}
+.product-info-current-count{
+	font-size: 1.2rem;
+	align-items: center;
+	margin-left:1rem;
+}
+.product-info-button-add{
+	background-color: var(--main-red-color);
+	height: 100%;
+	flex:1;
+	margin-top:0;
+}
+.product-info-button-add:hover{
+	background-color: var(--main-black-color);
+}
+.product-info-description{
+	margin:2rem;
+	display:flex;
+	flex-direction: column;
+}
+.product-info-description-heading{
+	padding-left:0.5rem;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 0.8rem;
+}
+.underline.highliter{
+	border-bottom: 1.5px solid var(--main-red-color);
+	width:90px;
+	margin-top:0.8rem;
+}
+.product-info-description-container p{
+	text-align: left;
+	color:(--main-gray-color);
+	margin-bottom:80px;
+}
+.poroduct-info-price{
+	display:flex;
+}
+.product-info-p{
+	margin-left:0.5rem;
+}
