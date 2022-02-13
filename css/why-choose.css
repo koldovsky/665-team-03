@@ -12,13 +12,13 @@
     margin-top: 45px;
 }
 
-.all-cards .card {
+.all-cards .why-card {
     padding-left: 15px;
     padding-right: 15px;
     margin-bottom: 30px;
 }
 
-.all-cards .card .card-item {
+.all-cards .why-card .card-item {
     height: 100%;
     width: 100%;
     padding: 31px 27px;
@@ -53,23 +53,20 @@
         justify-content: flex-start;
         flex-wrap: wrap;
     }
-    .card {
+    .why-card {
         flex-basis: 50%;
     }
 }
 
 @media (min-width: 992px) {
-    .all-cards {
-        /* padding: 50px 0 120px 0; */
-    }
-    .card {
+    .why-card {
         flex-basis: 25%;
     }
     .card-item h4 {
         font-size: 24px;
     }
  
-    .all-cards .card .card-item {
+    .all-cards .why-card .card-item {
         padding: 30px 20px;
 
     }

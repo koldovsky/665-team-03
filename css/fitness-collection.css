@@ -2,6 +2,7 @@
 .fitness-collection-block {
     background-image: url(../img/fitness-collection/fitness-background.jpg);
     background-size: cover;
+    background-position: 60%;
     display: block;
     padding-top: 110px;
     padding-bottom: 110px;
