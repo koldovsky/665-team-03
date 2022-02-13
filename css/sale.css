@@ -1,0 +1,112 @@
+.sale {
+    padding-top: 35px;
+    padding-bottom: 25px;
+    margin: auto;
+}
+
+.sale__inner {
+    padding: 0 24px;
+}
+
+.sale__goods .sale-item-bg {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    padding: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sale__goods .sale-item-bg:nth-child(1) {
+    background-image: url(../images/sale/t-shirt.webp);
+}
+
+.sale__goods .sale-item-bg:nth-child(2) {
+    background-image: url(../images/sale/jacket.webp);
+    margin-top: 50px;
+}
+.sale__goods .sale-item-bg:nth-child(3) {
+    background-image: url(../images/sale/trainers.webp);
+    margin-top: 50px;
+}
+
+.content__wrapper {
+    background: rgba(34, 35, 35, 0.89);
+}
+
+.sale__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+}
+
+.sale__content p {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 30px;
+    font-weight: 400;
+    color: var(--main-white-color);
+}
+
+.sale__content a {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 25.2px;
+    color: var(--main-white-color);
+    cursor: pointer;
+    margin-top: 25px;
+}
+
+.sale__content a:hover {
+    text-decoration: underline;
+}
+
+@media(min-width:768px) {
+    .sale__goods  {
+    display: grid; 
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 250px;
+    gap: 30px; 
+    grid-template-areas: 
+      "aaa sss"
+      "ddd ddd"
+      "ddd ddd"; 
+    }
+    .ddd {
+         grid-area: ddd;
+    }
+    .aaa { 
+        grid-area: aaa;
+    }
+    .sss {
+         grid-area: sss; 
+    }
+    .sale__goods .sale-item-bg:nth-child(2) {
+        margin-top: 0;
+    }
+    .sale__goods .sale-item-bg:nth-child(3) {
+      gap: 30px;
+      margin-top: 0;
+    }
+    .sale__content p {
+        font-size: 33px;
+    }
+}
+
+@media(min-width:992px) {
+    .sale__goods {
+        grid-template-columns: 1fr 1fr 1fr; 
+        grid-template-rows: 1fr ;
+        grid-template-areas: 
+        "aaa sss ddd"
+    }
+    .sale__goods .sale-item-bg:nth-child(1),
+    .sale__goods .sale-item-bg:nth-child(2),
+    .sale__goods .sale-item-bg:nth-child(3) {
+        margin-top: 0;
+    }
+}
