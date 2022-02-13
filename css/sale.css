@@ -50,6 +50,7 @@
     font-size: 30px;
     font-weight: 400;
     color: var(--main-white-color);
+    margin-bottom: 0;
 }
 
 .sale__content a {
