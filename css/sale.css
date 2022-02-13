@@ -22,15 +22,15 @@
 }
 
 .sale__goods .sale-item-bg:nth-child(1) {
-    background-image: url(../images/sale/t-shirt.webp);
+    background-image: url(../img/sale/t-shirt.webp);
 }
 
 .sale__goods .sale-item-bg:nth-child(2) {
-    background-image: url(../images/sale/jacket.webp);
+    background-image: url(../img/sale/jacket.webp);
     margin-top: 50px;
 }
 .sale__goods .sale-item-bg:nth-child(3) {
-    background-image: url(../images/sale/trainers.webp);
+    background-image: url(../img/sale/trainers.webp);
     margin-top: 50px;
 }
 
