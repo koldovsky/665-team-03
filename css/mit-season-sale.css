@@ -1,0 +1,143 @@
+@import url(common.css);
+
+.mid-season-sale {
+    padding-left:  24px;
+    padding-right:  24px;
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+.mid-season-sale__wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+a {
+    text-decoration: none;
+    display: inline-block;
+}
+header.mid-season-sale__header {
+    font-family: 'Bebas Neue', cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+header.mid-season-sale__header > h2 {
+    position: relative;
+    font-size: 52px;
+    line-height: 1.14;
+    font-weight: 400;
+    color: var(--main-black-color); 
+    margin-bottom: 30px;
+}
+
+header.mid-season-sale__header > h2:after {
+    content:"";
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    transform: translate(-50%, -50%);
+    height: 2px;
+    width: 93.6px;
+    background-color: var(--divider-gray-color); 
+}
+
+header.mid-season-sale__header > p {
+    font-size: 20px;
+    line-height: 1.5;
+    font-family: 'PT Sans' ,sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+    color: var(--main-gray-color); 
+    text-transform: none; 
+}
+.product {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product img {
+    width: 100%;
+}
+.product p a {
+    display: inline-block;
+    font-size: 18px;
+    margin-top: 8px;
+    color: var(--main-gray-color);  
+}
+
+.product p a:hover {
+    text-decoration: underline;
+}
+
+.product span {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--main-red-color);
+    margin-top: 16px;
+}
+
+.button-cart {
+    margin-top: 24px;
+}
+
+.product .button-cart a {
+    display: inline-block;
+    background-color: var(--main-black-color);
+    color: var(--main-white-color);
+    font-size: 15px;
+    font-weight: 700;
+    padding: 15px 26px;
+    line-height: 19.9px;
+}
+
+.product .button-cart a:hover {
+    background-color: var(--main-red-color);
+}
+
+.product {
+    margin-top: 50px;
+}
+
+@media(min-width:479px) {
+    .mid-season-sale__products {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .mid-season-sale__products .product {
+        flex-basis: 50%;
+        max-width: 50%;
+        padding: 0 15px;
+        gap: 20px;
+    }
+    .mid-season-sale__products .t-shirt {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+}
+@media(min-width:768px) {
+    .mid-season-sale {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    .mid-season-sale__products .product {
+        flex-basis: 33%;
+        max-width: 33%;
+    }
+    .mid-season-sale__products .tank-top,
+    .mid-season-sale__products .t-shirt {
+        flex-basis: 50%;
+        max-width: 50%;
+    }
+}
+@media(min-width:992px) {
+    .mid-season-sale__products .product {
+        flex-basis: 20%;
+        max-width: 20%;
+    }
+}
