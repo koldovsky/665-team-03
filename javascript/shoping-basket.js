@@ -178,7 +178,7 @@
         if (allCards.length < 1) {
             productsInBasket.classList.remove('active')
             emptyBasket.classList.add('active')
-            setTimeout(clouseBasket, 3000)
+            setTimeout(clouseBasket, 2000)
         }
     }
 
@@ -272,8 +272,8 @@
         localStorage.setItem('items', JSON.stringify([]))
         valueInputs.forEach(input => input.value = '')
         counter = 0
-        setTimeout(clouseBasket, 3000);
-        setTimeout(() => greetengText.classList.remove('active'), 3000)
+        setTimeout(clouseBasket, 2000);
+        setTimeout(() => greetengText.classList.remove('active'), 2000)
 
     })
 

@@ -1,12 +1,12 @@
-.main{
-min-height: 51vh;
+.main.new-arrivals-product{
 display:flex;
+flex:1;
 flex-direction: column;
 max-width: 1200px;
-margin: 0 auto 25% auto;
+margin: 5% auto;
 }
 @media screen and (min-width:768px) {
-	.main{
+	.main.new-arrivals-product{
 		flex-direction: row;
 	}
 	.pruduct-info-images{
@@ -116,4 +116,10 @@ margin: 0 auto 25% auto;
 }
 .product-info-p{
 	margin-left:0.5rem;
+}
+.product-info-body-wraper{
+	height: 100vh;
+	display:flex;
+	flex-direction: column;
+	align-items: stretch;
 }
