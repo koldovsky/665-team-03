@@ -85,7 +85,7 @@
 
 @media(min-width:768px) {
     .subscribe {
-        background-image: url(../images/subscribe/subscribe-bg.webp);
+        background-image: url(/img/subscribe/subscribe-bg.webp);
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
