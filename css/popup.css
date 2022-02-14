@@ -15,7 +15,7 @@
     transition: visibility 0s, opacity 1s;
 }
 
-.modal {
+.modal-popup {
     font-family: 'Bebas Neue', cursive;
     position: relative;
     background-color: #fff;
@@ -25,31 +25,31 @@
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    border-top: 9px solid red;
+    border-top: 9px solid var(--main-red-color);
     border-radius: 4px;
 }
 
-.modal img {
+.modal-popup img {
     max-width: 35px;
     margin-bottom: 20px;
 }
 
-.modal p {
+.modal-popup p {
     font-size: 16px;
     color: rgb(113, 116, 116);
     text-align: center;
     margin-bottom: 20px;
 }
-.modal h2 {
+.modal-popup h2 {
     font-size: 16px;
     color: rgb(113, 116, 116);
     margin-bottom: 20px;
 
 }
-.modal  a {
+.modal-popup a {
     display: inline-block;
-    background-color: red;
-    color: #fff;
+    background-color: var(--main-red-color);
+    color: var(--main-white-color);
     text-align: center;
     padding: 5px 0;
     width: 100%;
