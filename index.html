@@ -649,27 +649,39 @@
     </section>
     <!--Mykhailo  block blog end-->
 
-    <!--Sanya block start -->
-    <section>
-        <div class="subscribe">
-            <div class="subscribe-inner">
-                <div class="subscribtions-content">
-                    <div>
-                        <img src="./img/subscribe-section/envelope.svg" class="envelop" alt="Envelop">
-                        <p><span>10%</span>OFF YOUR FIRST ORDER. SIGN UP TO OUR NEWSLETTER TO GET THIS SPECIAL OFFER.
-                        </p>
+    <!--Chympaiesh subscribe block start -->
+    <section class="subscribe" id="contact">
+        <div class="container">
+            <div class="subscribe__wrapper">
+                <div class="content__inner">
+                    <div class="subcribe__content">
+                        <img src="./images/subscribe/envelope.svg">   
+                        <p><span class="text-brand-color">10%</span> Off Yout First Order. Sign Up To Our NewsLetter To Get This Special Offer. </p>
                     </div>
                 </div>
-                <div class="form-subs">
-                    <form class="form-subscribe" action="https://formspree.io/f/mbjqewew" method="POST">
-                        <input type="email" placeholder="Your email address">
-                        <input class="button-subs" id="my-form-button" value="subscribe" type="submit">
+                <div class="form__inner">
+                    <form class="form__subscribe">
+                        <input type="email" name="email" placeholder="Your email address" required>
+                        <input class="btn btn--red modal-btn" type="submit" value="Subscribe">
+                       <!-- <a class=" btn--red modal-btn">Subscribe</a> -->
                     </form>
                 </div>
             </div>
         </div>
     </section>
-    <!--Sanya block end-->
+    <!--Chympaiesh subscribe block end-->
+
+    <!--Chympaiesh popup start-->
+    <div class="modal-bg" id="modal-bg">
+        <div class="modal">
+            <img src="./images/popup-submit/popup.svg" alt="close">
+            <p>We will contact you shortly.</p>
+            <h2>Thank you!</h2>
+            <a class="modal-link-close" href="#">OK</a>
+            <span class="modal-close">X</span>
+        </div>
+    </div>
+    <!--Chympaiesh popup end-->
 
     <!--Natalia map-block start-->
     <section class="map" id="map">
@@ -689,6 +701,11 @@
         </div>
     </section>
     <!--Natalia map-block end-->
+
+    <!--Natalia footer start-->
+    <!--Natalia footer start-->
+
+
 
     <!--Natalia footer start-->
     <footer class="footer" id="footer">

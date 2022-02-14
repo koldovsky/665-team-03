@@ -1,0 +1,116 @@
+.subscribe {
+    padding-top: 35px;
+    padding-bottom: 45px;
+}
+
+.content__inner {
+    padding: 0 24px;
+}
+
+.subcribe__content {
+    font-family: 'PT Sans' ,sans-serif;
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.subcribe__content > img {
+    max-width: 50px;
+    display: block;
+    margin: 7.5px;
+}
+
+.subcribe__content > p {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--main-black-color);
+    margin: 7.5px;
+}
+
+.subcribe__content > p > span {
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.form__inner {
+    padding: 0 24px;
+}
+
+.form__subscribe {
+    margin-top: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form__subscribe input[type=email] {
+    display: block;
+    width: 100%;
+    padding: 15px 26px;
+    font-size: 15px;
+    line-height: 1.3333;
+    color: var(--main-black-color);
+    background-color: rgba(34, 35, 35, 0.12);
+    border: none;
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+.form__subscribe input[type=email]:focus {
+    outline-color: #3b99fc;
+}
+
+.form__subscribe input[type=submit],
+.form__subscribe a
+ {
+    margin-top: 24px;
+    color: var(--main-white-color);
+    padding: 15px 26px;
+    font-weight: 700;
+    cursor: pointer;
+    background-color: var(--main-red-color);
+    border: none;
+    -webkit-appearance: none;
+     border-radius: 0;
+     text-align: center;
+}
+
+.form__subscribe input[type=submit]:hover,
+.form__subscribe a:hover {
+    background-color: var(--main-black-color);
+}
+
+@media(min-width:768px) {
+    .subscribe {
+        background-image: url(../images/subscribe/subscribe-bg.webp);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    .subscribe__wrapper {
+        justify-content: flex-end;
+        display: flex;
+        align-items: center;
+        flex-basis: 60%;
+    }
+    .content__inner {
+        padding: 0;
+        flex-basis: 500px;
+    }
+    .form__inner {
+        padding: 0;
+        flex-basis: 300px;
+    }
+    .form__subscribe {
+        margin-top: 0;
+    }
+    .subcribe__content {
+        margin-top: 0;
+    }
+    .form__subscribe input[type=text] {
+        background: transparent;
+    }
+}
